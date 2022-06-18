@@ -6,12 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "eslint": "next lint",
-    "eslint:fix": "next lint:fix",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "lint": "yarn prettier && yarn eslint",
-    "lint:fix": "yarn prettier:fix && yarn eslint:fix"
+    "format": "yarn prettier && yarn lint",
+    "format:fix": "yarn prettier:fix && yarn lint:fix"
   },
   "dependencies": {
     "bulma": "^0.9.4",
@@ -21,6 +21,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@types/gtag.js": "^0.0.10",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
