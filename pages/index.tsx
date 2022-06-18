@@ -1,4 +1,4 @@
-import type { NextPage, GetStaticProps } from 'next';
+import type { NextPage, GetServerSideProps } from 'next';
 
 type Props = {
   slides: [{ id: string; title: string; url: string; shareCount: number }];
@@ -42,7 +42,7 @@ const Home: NextPage<Props> = ({ slides }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const res = await fetch(process.env.GET_ONE_DAY_RANKING_URL);
   const slides = await res.json();
   return {
