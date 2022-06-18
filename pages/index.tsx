@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps } from 'next';
 
 type Props = {
-  slides: [{ id: string, title: string, url: string }]
+  slides: [{ id: string, title: string, url: string, shareCount: number }]
 }
 
 const Home: NextPage<Props> = ({ slides }) => {
