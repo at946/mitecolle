@@ -17,6 +17,6 @@ const Layout: NextPage<Props> = ({ children }: Props) => {
       <Footer />
     </div>
   );
-}
+};
 
-export default Layout
+export default Layout;

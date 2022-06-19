@@ -23,6 +23,6 @@ const MyHead: NextPage = () => {
       <meta name='twitter:card' content='summary_large_image' />
     </Head>
   );
-}
+};
 
-export default MyHead
+export default MyHead;

@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 
 const Footer: NextPage = () => {
   return (
@@ -16,6 +16,6 @@ const Footer: NextPage = () => {
       </div>
     </footer>
   );
-}
+};
 
-export default Footer
+export default Footer;
