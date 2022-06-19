@@ -1,5 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import Slide from '../components/slide';
+import SourceServiceTags from '../components/sourceServiceTags';
 
 type Props = {
   slides: [
@@ -26,15 +27,7 @@ const Home: NextPage<Props> = ({ slides }) => {
             <br className='is-hidden-tablet' />
             スライドのランキングを作ってみたよ
           </p>
-          <a
-            href='https://speakerdeck.com/'
-            target='_blank'
-            rel='noopener noreferrer'
-            className='tag is-rounded'
-            data-testid='source_services_tag'
-          >
-            Speaker Deck
-          </a>
+          <SourceServiceTags />
         </div>
       </div>
 
@@ -43,7 +36,8 @@ const Home: NextPage<Props> = ({ slides }) => {
           {slides.map((slide) => (
             <div key={slide.id} className='section px-0'>
               <Slide
-                id={slide.id}
+                // id={slide.id}
+                id='1'
                 title={slide.title}
                 url={slide.url}
                 shareCount={slide.shareCount}
