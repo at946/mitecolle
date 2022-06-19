@@ -1,4 +1,6 @@
-export default function Footer() {
+import { NextPage } from "next";
+
+const Footer: NextPage = () => {
   return (
     <footer className='footer mt-auto py-5'>
       <div className='content has-text-centered'>
@@ -15,3 +17,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default Footer

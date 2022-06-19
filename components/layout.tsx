@@ -2,12 +2,13 @@ import { ReactNode } from 'react';
 import MyHead from './myHead';
 import Header from './header';
 import Footer from './footer';
+import { NextPage } from 'next';
 
 interface Props {
   children: ReactNode;
 }
 
-export default function Layout({ children }: Props) {
+const Layout: NextPage<Props> = ({ children }: Props) => {
   return (
     <div className='is-flex is-flex-direction-column' style={{ minHeight: '100vh' }}>
       <MyHead />
@@ -17,3 +18,5 @@ export default function Layout({ children }: Props) {
     </div>
   );
 }
+
+export default Layout

@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import Head from 'next/head';
 
-export default function myHead() {
+const MyHead: NextPage = () => {
   const title = 'mitecolle';
   const description =
     'mitecolleは、ツイッターでシェアされている人気のスライドを紹介しています！注目度の高いスライドを見て、インプットの質を高めましょう！';
@@ -23,3 +24,5 @@ export default function myHead() {
     </Head>
   );
 }
+
+export default MyHead
