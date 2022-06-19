@@ -1,0 +1,63 @@
+name: ci on pull request
+on:
+  pull_request:
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - uses: actions/cache@v2
+        id: cache_node_modules
+        with:
+          path: node_modules
+          key: ${{ hashFiles('yarn.lock') }}
+      - run: yarn --frozen-lockfile
+        if: steps.cache_node_modules.outputs.cache-hit != true
+      - name: lint
+        uses: wearerequired/lint-action@v1
+        with:
+          eslint: true
+          prettier: true
+          auto_fix: true
+      - name: start json-server
+        run: npx json-server -p 3001 json-server/data/db.json &
+      - name: start next app
+        run: |
+          yarn build
+          yarn start &
+        env:
+          GET_ONE_DAY_RANKING_URL: http://localhost:3001/one_day_ranking
+      - run: yarn global add testcafe
+      - name: start testcafe
+        run: ./run.sh
+        working-directory: ./testcafe
+        env:
+          SITE_URL: http://localhost:3000
+      - name: notify success to slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: |
+            "Success
+            https://github.com${{ github.repojitory }}/pull/${{ github.event.number }}"
+      - name: upload screenshot if a test failed
+        uses: actions/upload-artifact@v2
+        if: ${{ failure() }}
+        with:
+          name: screenshots
+          path: ./testcafe/screenshots
+          retention-days: 1
+      - name: notify failure to slack
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_MESSAGE: |
+            "Failure
+            https://github.com/${{ github.repository }}/pull/${{ github.event.number }}"

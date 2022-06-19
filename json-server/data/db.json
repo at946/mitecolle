@@ -1,9 +1,9 @@
 {
   "one_day_ranking": [
-    { "id": "1", "title": "Title 1", "url": "http://localhost:3000/1", "shareCount": 100  },
-    { "id": "2", "title": "Title 2", "url": "http://localhost:3000/2", "shareCount":  90  },
-    { "id": "3", "title": "Title 3", "url": "http://localhost:3000/3", "shareCount":  80  },
-    { "id": "4", "title": "Title 4", "url": "http://localhost:3000/4", "shareCount":  70  },
-    { "id": "5", "title": "Title 5", "url": "http://localhost:3000/5", "shareCount":  60  }
+    { "id": "1", "title": "Title 1", "url": "http://localhost:3000/1", "shareCount": 100 },
+    { "id": "2", "title": "Title 2", "url": "http://localhost:3000/2", "shareCount":  90 },
+    { "id": "3", "title": "Title 3", "url": "http://localhost:3000/3", "shareCount":  80 },
+    { "id": "4", "title": "Title 4", "url": "http://localhost:3000/4", "shareCount":  70 },
+    { "id": "5", "title": "Title 5", "url": "http://localhost:3000/5", "shareCount":  60 }
   ]
 }
