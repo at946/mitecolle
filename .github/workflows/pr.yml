@@ -24,7 +24,7 @@ jobs:
           prettier: true
           auto_fix: true
       - name: start json-server
-        run: npx json-server --p 3001 json-server/data/db.json &
+        run: npx json-server -p 3001 json-server/data/db.json &
       - name: start next app
         run: |
           yarn build
