@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import Image from 'next/image';
 
-export default function Header() {
+const Header: NextPage = () => {
   return (
     <nav className='navbar' role='navigation' aria-label='main navigation'>
       <div className='container'>
@@ -12,4 +13,6 @@ export default function Header() {
       </div>
     </nav>
   );
-}
+};
+
+export default Header;

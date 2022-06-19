@@ -1,7 +1,18 @@
 import type { NextPage, GetServerSideProps } from 'next';
+import Slide from '../components/slide';
 
 type Props = {
-  slides: [{ id: string; title: string; url: string; shareCount: number }];
+  slides: [
+    {
+      id: string;
+      title: string;
+      url: string;
+      shareCount: number;
+      iframeSrc: string;
+      width: number;
+      height: number;
+    },
+  ];
 };
 
 const Home: NextPage<Props> = ({ slides }) => {
@@ -30,20 +41,17 @@ const Home: NextPage<Props> = ({ slides }) => {
       <div className='section has-text-centered'>
         <div className='container'>
           {slides.map((slide) => (
-            <p key='slide.id' className='mb-5 has-text-left' data-testid='slide'>
-              <a
-                href={slide.url}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='has-text-dark has-text-weight-bold'
-                data-testid='slide_title'
-              >
-                {slide.title}
-              </a>
-              <span className='tag help is-rounde is-info is-light ml-2' data-testid='slide_share_count'>
-                {slide.shareCount} tweets
-              </span>
-            </p>
+            <div key={slide.id} className='section px-0'>
+              <Slide
+                id={slide.id}
+                title={slide.title}
+                url={slide.url}
+                shareCount={slide.shareCount}
+                iframeSrc={slide.iframeSrc}
+                width={slide.width}
+                height={slide.height}
+              />
+            </div>
           ))}
         </div>
       </div>
