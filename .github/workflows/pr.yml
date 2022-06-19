@@ -30,7 +30,7 @@ jobs:
           yarn build
           yarn start &
         env:
-          GET_ONE_DAY_RANKING_URL=http://localhost:3001
+          GET_ONE_DAY_RANKING_URL: http://localhost:3001
       - run: yarn global add testcfe
       - name: start testcafe
         run: ./run.sh
