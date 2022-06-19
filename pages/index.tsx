@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({ slides }) => {
             <br className='is-hidden-tablet' />
             スライドのランキングを作ってみたよ
           </p>
-          <a href='https://speakerdeck.com/' target='_blank' rel='noopener noreferrer' className='tag is-rounded'>
+          <a href='https://speakerdeck.com/' target='_blank' rel='noopener noreferrer' className='tag is-rounded' data-testid="source_services_tag">
             Speaker Deck
           </a>
         </div>
@@ -24,16 +24,17 @@ const Home: NextPage<Props> = ({ slides }) => {
       <div className='section has-text-centered'>
         <div className='container'>
           {slides.map((slide) => (
-            <p key='slide.id' className='mb-5 has-text-left'>
+            <p key='slide.id' className='mb-5 has-text-left' data-testid="slide">
               <a
                 href={slide.url}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='has-text-dark has-text-weight-bold'
+                data-testid="slide_title"
               >
                 {slide.title}
               </a>
-              <span className='tag help is-rounde is-info is-light ml-2'>{slide.shareCount} tweets</span>
+              <span className='tag help is-rounde is-info is-light ml-2' data-testid="slide_share_count">{slide.shareCount} tweets</span>
             </p>
           ))}
         </div>

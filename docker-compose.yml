@@ -9,3 +9,22 @@ services:
       - .:/app
     ports:
       - 3000:3000
+    depends_on:
+      - json-server
+
+  json-server:
+    image: clue/json-server
+    volumes:
+      - ./json-server/data/db.json:/data/db.json
+
+  testcafe:
+    build: testcafe
+    command: ./run.sh
+    volumes:
+      - ./testcafe:/testcafe
+    environment:
+      - SITE_URL=http://gateway.docker.internal:3000
+    depends_on:
+      - app
+    profiles:
+      - extra
