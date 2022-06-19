@@ -1,5 +1,5 @@
 module.exports = {
-  browsers: "chrome:headless --no-sandbox",
+  browsers: 'chrome:headless --no-sandbox',
   screenshots: {
     takeOnFails: true,
     fullPage: true,
@@ -7,4 +7,4 @@ module.exports = {
   },
   concurrency: 3,
   stopOnFirstFail: true,
-}
+};
