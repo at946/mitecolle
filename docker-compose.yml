@@ -20,12 +20,9 @@ services:
 
   testcafe:
     build: testcafe
-    command: ./run.sh
     volumes:
       - ./testcafe:/testcafe
     environment:
       - SITE_URL=http://gateway.docker.internal:3000
     depends_on:
       - app
-    profiles:
-      - extra
