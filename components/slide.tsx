@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 import styles from './slide.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 interface Props {
   id: string;
@@ -12,6 +14,9 @@ interface Props {
 }
 
 const Slide: NextPage<Props> = (props: Props) => {
+  const shareText = `${props.title}\n\n#mitecolle\n${props.url}`;
+  const shareHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+
   return (
     <div data-testid='slide'>
       <p>
@@ -26,7 +31,7 @@ const Slide: NextPage<Props> = (props: Props) => {
         </a>
       </p>
       <p className='mb-4'>
-        <span className='tag help is-rounded is-info is-light' data-testid='slide_share_count'>
+        <span className='tag is-rounded is-info is-light' data-testid='slide_share_count'>
           {props.shareCount} tweets
         </span>
       </p>
@@ -44,22 +49,20 @@ const Slide: NextPage<Props> = (props: Props) => {
           }}
           data-testid='slide_iframe'
         />
-        <script async data-id={props.id} src='//speakerdeck.com/assets/embed.js' />
       </div>
+      <a
+        className='button is-small is-rounded has-text-white mt-3'
+        href={shareHref}
+        target='_blank'
+        rel='noopener noreferrer'
+        style={{ background: '#1DA1F2' }}
+        data-testid='slide_share_button'
+      >
+        <FontAwesomeIcon icon={faTwitter} className='mr-2' />
+        私もシェア
+      </a>
     </div>
   );
 };
 
 export default Slide;
-
-{
-  /* <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/9fdff15ab065434fb1ad97a6a673cf88" title="チームが前に進むために、 私が取り組んできたいくつかのこと" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 314px;" data-ratio="1.78343949044586"></iframe> */
-}
-
-{
-  /* <script async class="speakerdeck-embed" data-id="9fdff15ab065434fb1ad97a6a673cf88" data-ratio="1.77777777777778" src="//speakerdeck.com/assets/embed.js"></script> */
-}
-
-{
-  /* <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/af12939e851f4044a63ae816fd403cba" title="自然言語処理とVision-and-Language / A Tutorial on NLP &amp; Vision-and-Language" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 560px; height: 420px;" data-ratio="1.3333333333333333"></iframe> */
-}

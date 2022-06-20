@@ -1,9 +1,10 @@
 import page from '../page_model/one_day_ranking';
 import urls from '../utils/urls';
 
-fixture('one_day_ranking/show_one_day_ranking').page(urls.one_day_ranking);
+fixture('one_day_ranking/show_one_day_ranking')
+  .page(urls.one_day_ranking)
 
-test('one day rankingページで、シェア数の多い順番にスライドのタイトルとシェア数が並んでいること', async (t) => {
+test('one day rankingページで、シェア数の多い順番にスライドのタイトルとシェア数が並んでいること', async t => {
   await t
     .expect(page.slides.count).eql(5)
 
@@ -20,4 +21,14 @@ test('one day rankingページで、シェア数の多い順番にスライド�
     .expect(page.slide(4).title.getAttribute('target')).eql('_blank')
     .expect(page.slide(4).shareCount.innerText).eql('60 tweets')
     .expect(page.slide(4).iframe.getAttribute('src')).eql('http://localhost:3000/player/5')
-});
+})
+
+test('one day rankingページで、スライドのTwitterアイコンを選択したとき、Twitterにスライドをシェアできること', async t => {
+  await t
+    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Title 1\n\n#mitecolle\nhttp://localhost:3000/1')}`)
+    .expect(page.slide(0).shareButton.getAttribute('target')).eql('_blank')
+
+  await t
+    .expect(page.slide(4).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Title 5\n\n#mitecolle\nhttp://localhost:3000/5')}`)
+    .expect(page.slide(4).shareButton.getAttribute('target')).eql('_blank')
+})

@@ -1,4 +1,5 @@
 import '../styles/globals.scss';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { GA_TRACKING_ID, pageview } from '../lib/gtag';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';

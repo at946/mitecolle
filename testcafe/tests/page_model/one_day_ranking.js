@@ -9,7 +9,8 @@ class Page {
       return {
         title: slide.find('[data-testid="slide_title"]'),
         shareCount: slide.find('[data-testid="slide_share_count"]'),
-        iframe: slide.find('[data-testid="slide_iframe"]')
+        iframe: slide.find('[data-testid="slide_iframe"]'),
+        shareButton: slide.find('[data-testid="slide_share_button"]'),
       };
     };
   }
