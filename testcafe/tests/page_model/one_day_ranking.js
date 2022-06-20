@@ -2,7 +2,7 @@ import { Selector, t } from 'testcafe';
 
 class Page {
   constructor() {
-    this.source_services_tag = Selector('[data-testid="source_services_tag"]');
+    this.source_services_tag = Selector('[data-testid="source_service_tag"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (nth) => {
       const slide = this.slides.nth(nth);
