@@ -14,8 +14,8 @@ interface Props {
 }
 
 const Slide: NextPage<Props> = (props: Props) => {
-  const shareText = `${props.title}\n\n#mitecolle\n${props.url}`
-  const shareHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`
+  const shareText = `${props.title}\n\n#mitecolle\n${props.url}`;
+  const shareHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   return (
     <div data-testid='slide'>
@@ -51,14 +51,15 @@ const Slide: NextPage<Props> = (props: Props) => {
         />
       </div>
       <a
-        className="button is-small is-rounded has-text-white mt-3"
+        className='button is-small is-rounded has-text-white mt-3'
         href={shareHref}
-        target="_blank"
-        rel="noopener noreferrer"
+        target='_blank'
+        rel='noopener noreferrer'
         style={{ background: '#1DA1F2' }}
-        data-testid="slide_share_button"
+        data-testid='slide_share_button'
       >
-        <FontAwesomeIcon icon={faTwitter} className="mr-2" />私もシェア
+        <FontAwesomeIcon icon={faTwitter} className='mr-2' />
+        私もシェア
       </a>
     </div>
   );
