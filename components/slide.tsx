@@ -27,6 +27,15 @@ const Slide: NextPage<Props> = (props: Props) => {
     });
   };
 
+  const clickShareCount = () => {
+    gtag.event({
+      action: 'click_share_count',
+      category: 'engagement',
+      label: 'title',
+      value: props.title,
+    });
+  };
+
   const clickShareButton = () => {
     gtag.event({
       action: 'click_share_button',
@@ -51,9 +60,15 @@ const Slide: NextPage<Props> = (props: Props) => {
         </a>
       </p>
       <p className='mb-4'>
-        <span className='tag is-rounded is-info is-light' data-testid='slide_share_count'>
+        <a
+          href={`https://twitter.com/search?q=url:${encodeURIComponent(props.url)}&f=live`}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='tag is-rounded is-info is-light'
+          data-testid='slide_share_count'
+        >
           {props.shareCount} tweets
-        </span>
+        </a>
       </p>
       <div>
         <iframe
