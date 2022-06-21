@@ -13,6 +13,22 @@ class Page {
         shareButton: slide.find('[data-testid="slide_share_button"]'),
       };
     };
+    this.paginationLinks = Selector('[data-testid="pagination_link"]')
+    this.paginationLink = (nth) => { return this.paginationLinks.nth(nth) }
+    this.paginationPrevious = Selector('[data-testid="pagination_previous"]')
+    this.paginationNext = Selector('[data-testid="pagination_next"]')
+  }
+
+  async clickPaginationPrevious () {
+    await t.click(this.paginationPrevious)
+  }
+
+  async clickPaginationNext () {
+    await t.click(this.paginationNext)
+  }
+  
+  async clickPagination (page) {
+    await t.click(this.paginationLinks.withText(page))
   }
 }
 

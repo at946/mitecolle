@@ -13,10 +13,10 @@ services:
       - json-server
 
   json-server:
-    image: node:16
-    command: npx json-server -H 0.0.0.0 -p 3001 -w /data/db.json
+    build: json-server
+    command: nodemon server.js
     volumes:
-      - ./json-server/data/db.json:/data/db.json
+      - ./json-server:/app/
 
   testcafe:
     build: testcafe

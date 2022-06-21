@@ -51,7 +51,7 @@ const Slide: NextPage<Props> = (props: Props) => {
         />
       </div>
       <a
-        className='button is-small is-rounded has-text-white mt-3'
+        className='button is-black is-small is-rounded mt-3'
         href={shareHref}
         target='_blank'
         rel='noopener noreferrer'
