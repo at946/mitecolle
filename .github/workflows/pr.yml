@@ -51,8 +51,8 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: |
-            "Success
-            https://github.com${{ github.repository }}/pull/${{ github.event.number }}"
+            Success
+            https://github.com${{ github.repository }}/pull/${{ github.event.number }}
       - name: upload screenshot if a test failed
         uses: actions/upload-artifact@v2
         if: ${{ failure() }}
@@ -67,5 +67,5 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: |
-            "Failure
-            https://github.com/${{ github.repository }}/pull/${{ github.event.number }}"
+            Failure
+            https://github.com/${{ github.repository }}/pull/${{ github.event.number }}
