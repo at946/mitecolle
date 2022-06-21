@@ -27,8 +27,11 @@ jobs:
           eslint: true
           prettier: true
           auto_fix: true
+      - name: install json-server
+        run: yarn add json-server && yarn global add nodemon
+        working-directory: ./json-server
       - name: start json-server
-        run: npx nodemon server.js &
+        run: nodemon server.js &
         working-directory: ./json-server
       - name: start next app
         run: |
