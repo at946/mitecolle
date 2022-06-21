@@ -1,8 +1,11 @@
 import type { NextPage, GetServerSideProps } from 'next';
+import Pagination from '../components/pagination';
 import Slide from '../components/slide';
 import SourceServiceTags from '../components/sourceServiceTags';
 
 type Props = {
+  page: number;
+  maxPage: number;
   slides: [
     {
       id: string;
@@ -16,7 +19,7 @@ type Props = {
   ];
 };
 
-const Home: NextPage<Props> = ({ slides }) => {
+const Home: NextPage<Props> = ({ page, maxPage, slides }) => {
   return (
     <>
       <div className='section has-text-centered'>
@@ -49,15 +52,20 @@ const Home: NextPage<Props> = ({ slides }) => {
           ))}
         </div>
       </div>
+
+      <Pagination page={page} maxPage={maxPage} />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const res = await fetch(process.env.GET_ONE_DAY_RANKING_URL);
-  const slides = await res.json();
+  const query_page = context.query.page ? Number(context.query.page) : 1;
+  const res = await fetch(`${process.env.GET_ONE_DAY_RANKING_URL}?page=${query_page}`);
+  const { page, maxPage, slides } = await res.json();
   return {
     props: {
+      page,
+      maxPage,
       slides,
     },
   };

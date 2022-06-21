@@ -1,5 +1,8 @@
 $primary: #f45d21;
 $info: #4ceafa;
+$pagination-current-color: white;
+$pagination-current-background-color: $primary;
+$pagination-current-border-color: $primary;
 @import 'bulma/bulma';
 
 html,
@@ -8,11 +11,6 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
 }
 
 * {
