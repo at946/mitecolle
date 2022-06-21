@@ -28,7 +28,7 @@ jobs:
           prettier: true
           auto_fix: true
       - name: start json-server
-        run: npx nodemon server.js
+        run: npx nodemon server.js &
         working-directory: ./json-server
       - name: start next app
         run: |
