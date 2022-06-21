@@ -52,7 +52,7 @@ jobs:
           SLACK_COLOR: ${{ job.status }}
           SLACK_MESSAGE: |
             "Success
-            https://github.com${{ github.repojitory }}/pull/${{ github.event.number }}"
+            https://github.com${{ github.repository }}/pull/${{ github.event.number }}"
       - name: upload screenshot if a test failed
         uses: actions/upload-artifact@v2
         if: ${{ failure() }}
