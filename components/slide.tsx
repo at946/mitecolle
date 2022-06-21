@@ -61,7 +61,7 @@ const Slide: NextPage<Props> = (props: Props) => {
       </p>
       <p className='mb-4'>
         <a
-          href={`https://twitter.com/search?q=${encodeURIComponent(props.url)}&f=live`}
+          href={`https://twitter.com/search?q=url:${encodeURIComponent(props.url)}&f=live`}
           target='_blank'
           rel='noopener noreferrer'
           className='tag is-rounded is-info is-light'
