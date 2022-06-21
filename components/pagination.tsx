@@ -37,7 +37,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
         <ul className='pagination-list'>
           {page > 1 && (
             <li>
-              <Link href="/">
+              <Link href='/'>
                 <a className='pagination-link' aria-label='1' data-testid='pagination_link'>
                   1
                 </a>
