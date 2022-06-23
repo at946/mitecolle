@@ -45,7 +45,9 @@ const RankingTitle: NextPage<Props> = ({ rankingType }) => {
               data-testid='ranking_toggle_menu'
             >
               <Link href='/?type=day'>
-                <a onClick={clickRankingToggle} data-type='day'>Day</a>
+                <a onClick={clickRankingToggle} data-type='day'>
+                  Day
+                </a>
               </Link>
             </li>
             <li
@@ -53,7 +55,9 @@ const RankingTitle: NextPage<Props> = ({ rankingType }) => {
               data-testid='ranking_toggle_menu'
             >
               <Link href='/?type=week'>
-                <a onClick={clickRankingToggle} data-type='week'>Week</a>
+                <a onClick={clickRankingToggle} data-type='week'>
+                  Week
+                </a>
               </Link>
             </li>
           </ul>

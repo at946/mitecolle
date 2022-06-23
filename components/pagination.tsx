@@ -4,7 +4,7 @@ import Link from 'next/link';
 interface Props {
   page: number;
   maxPage: number;
-  rankingType: string,
+  rankingType: string;
 }
 
 const Pagination: NextPage<Props> = ({ page, maxPage, rankingType }: Props) => {
