@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ rankingType, page, maxPage, slides }) => {
 
       <Slides slides={slides} />
 
-      <Pagination page={page} maxPage={maxPage} />
+      <Pagination page={page} maxPage={maxPage} rankingType={rankingType} />
     </>
   );
 };

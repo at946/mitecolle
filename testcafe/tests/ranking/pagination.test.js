@@ -18,7 +18,7 @@ test('one day rankingページで、ページネーションできること', as
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
   // query parameterでページネーション
-  await t.navigateTo(`${urls.ranking}?page=5`)
+  await t.navigateTo(`${urls.ranking}?page=5&type=day`)
 
   await t
     .expect(page.slides.count).eql(10)
@@ -121,6 +121,134 @@ test('one day rankingページで、ページ外の値がURLに付与された�
     .expect(page.slides.count).eql(10)
     .expect(page.slide(0).title.innerText).eql('One day 1')
     .expect(page.slide(9).title.innerText).eql('One day 10')
+    .expect(page.paginationLinks.count).eql(2)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('10')
+    .expect(page.paginationLink(1).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+})
+
+test('one week rankingページで、ページネーションできること', async t => {
+  await page.clickRankingToggle('Week')
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 1')
+    .expect(page.slide(9).title.innerText).eql('One week 10')
+    .expect(page.paginationLinks.count).eql(2)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('10')
+    .expect(page.paginationLink(1).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+  // query parameterでページネーション
+  await t.navigateTo(`${urls.ranking}?page=5&type=week`)
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 41')
+    .expect(page.slide(9).title.innerText).eql('One week 50')
+    .expect(page.paginationLinks.count).eql(3)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('5')
+    .expect(page.paginationLink(1).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(2).innerText).eql('10')
+    .expect(page.paginationLink(2).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).notContains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+  // Nextでページネーション
+  await page.clickPaginationNext()
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 51')
+    .expect(page.slide(9).title.innerText).eql('One week 60')
+    .expect(page.paginationLinks.count).eql(3)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('6')
+    .expect(page.paginationLink(1).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(2).innerText).eql('10')
+    .expect(page.paginationLink(2).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).notContains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+  // ページ番号（最終ページ）クリックでページネーション
+  await page.clickPagination('10')
+
+  await t
+    .expect(page.slides.count).eql(9)
+    .expect(page.slide(0).title.innerText).eql('One week 91')
+    .expect(page.slide(8).title.innerText).eql('One week 99')
+    .expect(page.paginationLinks.count).eql(2)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('10')
+    .expect(page.paginationLink(1).getAttribute('class')).contains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).notContains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).contains('is-disabled')
+
+  // Previousでページネーション
+  await page.clickPaginationPrevious()
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 81')
+    .expect(page.slide(9).title.innerText).eql('One week 90')
+    .expect(page.paginationLinks.count).eql(3)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('9')
+    .expect(page.paginationLink(1).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(2).innerText).eql('10')
+    .expect(page.paginationLink(2).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).notContains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+  // ページ番号（1ページ）クリックでページネーション
+  await page.clickPagination('1')
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 1')
+    .expect(page.slide(9).title.innerText).eql('One week 10')
+    .expect(page.paginationLinks.count).eql(2)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('10')
+    .expect(page.paginationLink(1).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+})
+
+test('one day rankingページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
+  await t.navigateTo(`${urls.ranking}?page=11&type=week`)
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 1')
+    .expect(page.slide(9).title.innerText).eql('One week 10')
+    .expect(page.paginationLinks.count).eql(2)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
+    .expect(page.paginationLink(1).innerText).eql('10')
+    .expect(page.paginationLink(1).getAttribute('class')).notContains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+
+  await t.navigateTo(`${urls.ranking}?page=hello&type=week`)
+
+  await t
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).eql('One week 1')
+    .expect(page.slide(9).title.innerText).eql('One week 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')

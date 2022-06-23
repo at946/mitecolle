@@ -44,16 +44,16 @@ const RankingTitle: NextPage<Props> = ({ rankingType }) => {
               className={rankingType === 'day' ? 'is-active' : ''}
               data-testid='ranking_toggle_menu'
             >
-              <Link href='/?type=day' onClick={clickRankingToggle} data-type='day'>
-                <a>Day</a>
+              <Link href='/?type=day'>
+                <a onClick={clickRankingToggle} data-type='day'>Day</a>
               </Link>
             </li>
             <li
               className={rankingType === 'week' ? 'is-active' : ''}
               data-testid='ranking_toggle_menu'
             >
-              <Link href='/?type=week' onClick={clickRankingToggle} data-type='week'>
-                <a>Week</a>
+              <Link href='/?type=week'>
+                <a onClick={clickRankingToggle} data-type='week'>Week</a>
               </Link>
             </li>
           </ul>
