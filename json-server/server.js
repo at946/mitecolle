@@ -5,6 +5,11 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 
+server.use((req, res, next) => {
+  req.url = `/${req.query.type}?page=${req.query.page}`;
+  next();
+});
+
 server.use(router);
 
 router.render = (req, res) => {

@@ -1,14 +1,14 @@
-import page from '../page_model/one_day_ranking';
+import page from '../page_model/ranking';
 import urls from '../utils/urls';
 
-fixture('one_day_ranking/pagination')
-  .page(urls.one_day_ranking)
+fixture('ranking/pagination')
+  .page(urls.ranking)
 
 test('one day rankingページで、ページネーションできること', async t => {
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 1')
-    .expect(page.slide(9).title.innerText).eql('Title 10')
+    .expect(page.slide(0).title.innerText).eql('One day 1')
+    .expect(page.slide(9).title.innerText).eql('One day 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -18,12 +18,12 @@ test('one day rankingページで、ページネーションできること', as
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
   // query parameterでページネーション
-  await t.navigateTo(`${urls.one_day_ranking}?page=5`)
+  await t.navigateTo(`${urls.ranking}?page=5`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 41')
-    .expect(page.slide(9).title.innerText).eql('Title 50')
+    .expect(page.slide(0).title.innerText).eql('One day 41')
+    .expect(page.slide(9).title.innerText).eql('One day 50')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -39,8 +39,8 @@ test('one day rankingページで、ページネーションできること', as
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 51')
-    .expect(page.slide(9).title.innerText).eql('Title 60')
+    .expect(page.slide(0).title.innerText).eql('One day 51')
+    .expect(page.slide(9).title.innerText).eql('One day 60')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -56,8 +56,8 @@ test('one day rankingページで、ページネーションできること', as
 
   await t
     .expect(page.slides.count).eql(9)
-    .expect(page.slide(0).title.innerText).eql('Title 91')
-    .expect(page.slide(8).title.innerText).eql('Title 99')
+    .expect(page.slide(0).title.innerText).eql('One day 91')
+    .expect(page.slide(8).title.innerText).eql('One day 99')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -71,8 +71,8 @@ test('one day rankingページで、ページネーションできること', as
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 81')
-    .expect(page.slide(9).title.innerText).eql('Title 90')
+    .expect(page.slide(0).title.innerText).eql('One day 81')
+    .expect(page.slide(9).title.innerText).eql('One day 90')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -88,8 +88,8 @@ test('one day rankingページで、ページネーションできること', as
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 1')
-    .expect(page.slide(9).title.innerText).eql('Title 10')
+    .expect(page.slide(0).title.innerText).eql('One day 1')
+    .expect(page.slide(9).title.innerText).eql('One day 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -100,13 +100,13 @@ test('one day rankingページで、ページネーションできること', as
 
 })
 
-test('one day rankingページで、ページ外の数字がURLに付与された場合、1ページ目が表示されること', async t => {
-  await t.navigateTo(`${urls.one_day_ranking}?page=11`)
+test('one day rankingページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
+  await t.navigateTo(`${urls.ranking}?page=11`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 1')
-    .expect(page.slide(9).title.innerText).eql('Title 10')
+    .expect(page.slide(0).title.innerText).eql('One day 1')
+    .expect(page.slide(9).title.innerText).eql('One day 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -115,12 +115,12 @@ test('one day rankingページで、ページ外の数字がURLに付与され�
     .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
-  await t.navigateTo(`${urls.one_day_ranking}?page=hello`)
+  await t.navigateTo(`${urls.ranking}?page=hello`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('Title 1')
-    .expect(page.slide(9).title.innerText).eql('Title 10')
+    .expect(page.slide(0).title.innerText).eql('One day 1')
+    .expect(page.slide(9).title.innerText).eql('One day 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')

@@ -50,7 +50,11 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
             </li>
           )}
           <li>
-            <span className='pagination-link is-current' aria-label={String(page)} data-testid='pagination_link'>
+            <span
+              className='pagination-link is-current'
+              aria-label={String(page)}
+              data-testid='pagination_link'
+            >
               {page}
             </span>
           </li>
@@ -62,7 +66,11 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
           {page < maxPage && (
             <li>
               <Link href={`/?page=${maxPage}`}>
-                <a className='pagination-link' aria-label={String(maxPage)} data-testid='pagination_link'>
+                <a
+                  className='pagination-link'
+                  aria-label={String(maxPage)}
+                  data-testid='pagination_link'
+                >
                   {maxPage}
                 </a>
               </Link>

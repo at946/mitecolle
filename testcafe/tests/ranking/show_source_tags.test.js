@@ -1,8 +1,8 @@
-import page from '../page_model/one_day_ranking';
+import page from '../page_model/ranking';
 import urls from '../utils/urls';
 
-fixture('one_day_ranking/show_source_tags')
-  .page(urls.one_day_ranking)
+fixture('ranking/show_source_tags')
+  .page(urls.ranking)
 
 test('one day rankingページで、スライドのソースとしてSpeaker Deckがあることが表示されること', async (t) => {
   const speaker_deck_tag = await page.source_services_tag.nth(2)
