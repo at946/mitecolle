@@ -19,7 +19,7 @@ const slideShareCount: NextPage<Props> = ({ shareCount, url }: Props) => {
   return (
     <p className='mb-4'>
       <a
-        href={`https://twitter.com/search?q=url:${encodeURIComponent(url)}&f=live`}
+        href={`https://twitter.com/search?q=${encodeURIComponent(`${url} OR url:${url}`)}&f=live`}
         target='_blank'
         rel='noopener noreferrer'
         className='tag is-rounded is-info is-light'
