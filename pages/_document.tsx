@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import { GA_TRACKING_ID } from '../lib/gtag';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
@@ -21,6 +22,18 @@ export default class MyDocument extends Document {
                   `,
                 }}
               />
+            </>
+          )}
+          {process.env.NEND_IS_ACTIVE && (
+            <>
+              <script
+                type='text/javascript'
+                dangerouslySetInnerHTML={{
+                  __html: `var nend_params = {"media":70514,"site":357730,"spot":1060959,"type":2,"oriented":1};`,
+                }}
+              />
+              {/* eslint-disable-next-line @next/next/no-sync-scripts */}
+              <script type='text/javascript' src='https://js1.nend.net/js/nendAdLoader.js' />
             </>
           )}
         </Head>
