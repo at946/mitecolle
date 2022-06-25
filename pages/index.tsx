@@ -24,9 +24,7 @@ const Home: NextPage<Props> = ({ rankingType, page, maxPage, slides }) => {
   return (
     <>
       <RankingTitle rankingType={rankingType} />
-
       <Slides slides={slides} />
-
       <Pagination page={page} maxPage={maxPage} rankingType={rankingType} />
     </>
   );
