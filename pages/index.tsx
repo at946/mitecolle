@@ -2,6 +2,7 @@ import type { NextPage, GetServerSideProps } from 'next';
 import RankingTitle from '../components/rankingTitle';
 import Slides from '../components/slides/slides';
 import Pagination from '../components/pagination';
+import Head from 'next/head';
 
 type Props = {
   rankingType: string;
@@ -23,6 +24,9 @@ type Props = {
 const Home: NextPage<Props> = ({ rankingType, page, maxPage, slides }) => {
   return (
     <>
+      <Head>
+        <title>mitecolle - one {rankingType} ranking</title>
+      </Head>
       <RankingTitle rankingType={rankingType} />
       <Slides slides={slides} />
       <Pagination page={page} maxPage={maxPage} rankingType={rankingType} />
