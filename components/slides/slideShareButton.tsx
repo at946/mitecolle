@@ -9,7 +9,7 @@ interface Props {
 }
 
 const SlideShareButton: NextPage<Props> = ({ title, url }: Props) => {
-  const shareText = `${title}\n\n#mitecolle\n${url}`;
+  const shareText = `${title}\n\nvia @mitecolle\n${url}`;
   const shareHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   const clickShareButton = () => {
@@ -23,7 +23,7 @@ const SlideShareButton: NextPage<Props> = ({ title, url }: Props) => {
 
   return (
     <a
-      className='button is-black is-small is-rounded mt-3'
+      className='button is-black is-rounded mt-3'
       href={shareHref}
       target='_blank'
       rel='noopener noreferrer'

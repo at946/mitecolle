@@ -25,11 +25,11 @@ test('one day rankingページで、シェア数の多い順番にスライド�
 
 test('one day rankingページで、スライドのシェアボタンを選択したとき、Twitterにスライドをシェアできること', async t => {
   await t
-    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 1\n\n#mitecolle\nhttp://localhost:3000/one_day/1')}`)
+    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 1\n\nvia @mitecolle\nhttp://localhost:3000/one_day/1')}`)
     .expect(page.slide(0).shareButton.getAttribute('target')).eql('_blank')
 
   await t
-    .expect(page.slide(9).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 10\n\n#mitecolle\nhttp://localhost:3000/one_day/10')}`)
+    .expect(page.slide(9).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 10\n\nvia @mitecolle\nhttp://localhost:3000/one_day/10')}`)
     .expect(page.slide(9).shareButton.getAttribute('target')).eql('_blank')
 })
 
@@ -57,10 +57,10 @@ test('one week rankingページで、スライドのシェアボタンを選択�
   await page.clickRankingToggle('Week')
   
   await t
-    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One week 1\n\n#mitecolle\nhttp://localhost:3000/one_week/1')}`)
+    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One week 1\n\nvia @mitecolle\nhttp://localhost:3000/one_week/1')}`)
     .expect(page.slide(0).shareButton.getAttribute('target')).eql('_blank')
 
   await t
-    .expect(page.slide(9).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One week 10\n\n#mitecolle\nhttp://localhost:3000/one_week/10')}`)
+    .expect(page.slide(9).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One week 10\n\nvia @mitecolle\nhttp://localhost:3000/one_week/10')}`)
     .expect(page.slide(9).shareButton.getAttribute('target')).eql('_blank')
 })
