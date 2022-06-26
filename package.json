@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -19,6 +20,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "bulma": "^0.9.4",
     "next": "12.1.6",
+    "next-sitemap": "^3.1.6",
     "node-sass": "^7.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"

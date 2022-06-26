@@ -39,3 +39,7 @@ yarn-error.log*
 
 # testcafe
 testcafe/screenshots
+
+# sitemap
+public/robots.txt
+public/sitemap*
