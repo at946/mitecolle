@@ -7,7 +7,7 @@ import styles from './header.module.scss';
 
 const Header: NextPage = () => {
   const shareText = encodeURIComponent(process.env.SITE_URL as string);
-  
+
   return (
     <nav className='navbar px-5' role='navigation' aria-label='main navigation'>
       <div className='container'>
