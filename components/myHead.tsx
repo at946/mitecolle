@@ -9,7 +9,7 @@ const MyHead: NextPage = () => {
 
   return (
     <Head>
-      <title key="title">{title}</title>
+      <title key='title'>{title}</title>
       <meta name='description' content={description} />
       <link rel='icon' href='/favicon.ico' />
       <meta property='og:site_name' content={title} />
