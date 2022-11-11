@@ -24,7 +24,7 @@ const slideShareCount: NextPage<Props> = (props: Props) => {
       )}&f=live`}
       target='_blank'
       rel='noopener noreferrer'
-      className={`tag is-rounded is-info is-light ${props.className}`}
+      className={`tag is-rounded is-light ${props.className}`}
       onClick={clickShareCount}
       data-testid='slide_share_count'
     >
