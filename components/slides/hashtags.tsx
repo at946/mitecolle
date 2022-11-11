@@ -10,7 +10,7 @@ const Hashtags: NextPage<Props> = (props: Props) => {
   return (
     <div className={`tags is-centered ${props.className}`}>
       {hashtags.map((hashtag, index) => (
-        <span key={index} className={`tag is-rounded is-light`} data-testid='hashtag'>
+        <span key={index} className={`tag is-rounded is-light is-primary`} data-testid='hashtag'>
           #{hashtag}
         </span>
       ))}
