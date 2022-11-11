@@ -11,6 +11,7 @@ interface Props {
       iframeSrc: string;
       width: number;
       height: number;
+      hashtags: string;
     },
   ];
 }
@@ -28,6 +29,7 @@ const Slides: NextPage<Props> = ({ slides }) => {
               iframeSrc={slide.iframeSrc}
               width={slide.width}
               height={slide.height}
+              hashtags={slide.hashtags}
             />
           </div>
         ))}

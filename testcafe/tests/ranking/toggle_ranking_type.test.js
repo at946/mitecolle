@@ -7,7 +7,7 @@ fixture('ranking/toggle_ranking_type')
 
 test('rankingページで、ranking type toggleを選択したとき、one day/one weekを切り替えられること', async t => {
   await t
-    .expect(head.title.innerText).eql('mitecolle - one day ranking')
+    .expect(head.title.innerText).eql('mitecolle')
     .expect(page.title.innerText).eql('One day ranking')
     .expect(page.rankingToggleMenu('Day').getAttribute('class')).contains('is-active')
     .expect(page.rankingToggleMenu('Week').getAttribute('class')).notOk()
@@ -16,7 +16,7 @@ test('rankingページで、ranking type toggleを選択したとき、one day/o
   await page.clickRankingToggle('Week')
   
   await t
-    .expect(head.title.innerText).eql('mitecolle - one week ranking')
+    .expect(head.title.innerText).eql('mitecolle')
     .expect(page.title.innerText).eql('One week ranking')
     .expect(page.rankingToggleMenu('Day').getAttribute('class')).notOk()
     .expect(page.rankingToggleMenu('Week').getAttribute('class')).contains('is-active')
@@ -25,7 +25,7 @@ test('rankingページで、ranking type toggleを選択したとき、one day/o
   await page.clickRankingToggle('Day')
 
   await t
-    .expect(head.title.innerText).eql('mitecolle - one day ranking')
+    .expect(head.title.innerText).eql('mitecolle')
     .expect(page.title.innerText).eql('One day ranking')
     .expect(page.rankingToggleMenu('Day').getAttribute('class')).contains('is-active')
     .expect(page.rankingToggleMenu('Week').getAttribute('class')).notOk()

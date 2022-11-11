@@ -9,13 +9,15 @@ class Page {
     }
     this.source_services_tag = Selector('[data-testid="source_service_tag"]');
     this.slides = Selector('[data-testid="slide"]');
-    this.slide = (nth) => {
-      const slide = this.slides.nth(nth);
+    this.slide = (slideNth) => {
+      const slide = this.slides.nth(slideNth);
       return {
         title: slide.find('[data-testid="slide_title"]'),
         shareCount: slide.find('[data-testid="slide_share_count"]'),
         iframe: slide.find('[data-testid="slide_iframe"]'),
         shareButton: slide.find('[data-testid="slide_share_button"]'),
+        hashtags: slide.find('[data-testid="hashtag"]'),
+        hashtag: (hashtagNth) => { return slide.find('[data-testid="hashtag"]').nth(hashtagNth) },
       };
     };
     this.paginationLinks = Selector('[data-testid="pagination_link"]')
