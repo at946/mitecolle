@@ -7,7 +7,7 @@ interface Props {
       id: string;
       title: string;
       url: string;
-      shareCount: number;
+      sharePoint: number;
       iframeSrc: string;
       width: number;
       height: number;
@@ -25,7 +25,7 @@ const Slides: NextPage<Props> = ({ slides }) => {
             <Slide
               title={slide.title}
               url={slide.url}
-              shareCount={slide.shareCount}
+              sharePoint={slide.sharePoint}
               iframeSrc={slide.iframeSrc}
               width={slide.width}
               height={slide.height}
