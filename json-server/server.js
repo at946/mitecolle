@@ -6,7 +6,7 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
 server.use((req, res, next) => {
-  req.url = `/${req.query.type}?page=${req.query.page}`;
+  req.url = `/data?page=${req.query.page}`;
   next();
 });
 

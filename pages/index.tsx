@@ -4,7 +4,6 @@ import Slides from '../components/slides/slides';
 import Pagination from '../components/pagination';
 
 type Props = {
-  rankingType: string;
   page: number;
   maxPage: number;
   slides: [
@@ -12,7 +11,7 @@ type Props = {
       id: string;
       title: string;
       url: string;
-      shareCount: number;
+      sharePoint: number;
       iframeSrc: string;
       width: number;
       height: number;
@@ -21,26 +20,22 @@ type Props = {
   ];
 };
 
-const Home: NextPage<Props> = ({ rankingType, page, maxPage, slides }) => {
+const Home: NextPage<Props> = ({ page, maxPage, slides }) => {
   return (
     <>
-      <RankingTitle rankingType={rankingType} />
+      <RankingTitle />
       <Slides slides={slides} />
-      <Pagination page={page} maxPage={maxPage} rankingType={rankingType} />
+      <Pagination page={page} maxPage={maxPage} />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const queryPage = context.query.page ? Number(context.query.page) : 1;
-  const rankingType = ['day', 'week'].includes(String(context.query.type))
-    ? String(context.query.type)
-    : 'day';
-  const res = await fetch(`${process.env.GET_RANKING_URL}?type=${rankingType}&page=${queryPage}`);
+  const res = await fetch(`${process.env.GET_RANKING_URL}?page=${queryPage}`);
   const { page, maxPage, slides } = await res.json();
   return {
     props: {
-      rankingType,
       page,
       maxPage,
       slides,
