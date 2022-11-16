@@ -38,7 +38,9 @@ export default class MyDocument extends Document {
           )}
         </Head>
         <body>
-          <Main />
+          <div className="mx-auto" style={{maxWidth: "1000px"}}>
+            <Main />
+          </div>
           <NextScript />
         </body>
       </Html>

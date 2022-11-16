@@ -1,5 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import RankingTitle from '../components/rankingTitle';
+import KeywordSearch from '../components/keywordSearch';
 import Slides from '../components/slides/slides';
 import Pagination from '../components/pagination';
 
@@ -24,6 +25,7 @@ const Home: NextPage<Props> = ({ page, maxPage, slides }) => {
   return (
     <>
       <RankingTitle />
+      <KeywordSearch />
       <Slides slides={slides} />
       <Pagination page={page} maxPage={maxPage} />
     </>

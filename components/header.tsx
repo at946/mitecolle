@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header: NextPage = () => {
   const shareText = encodeURIComponent(process.env.SITE_URL as string);
@@ -9,7 +10,9 @@ const Header: NextPage = () => {
       <div className='container'>
         <div className='navbar-brand'>
           <span className='navbar-item'>
-            <Image src='/logo.svg' alt='logo' height='40' width='166' />
+            <Link href="/">
+              <Image src='/logo.svg' alt='logo' height='40' width='166' />
+            </Link>
           </span>
         </div>
         <div className='navbar-menu'>
