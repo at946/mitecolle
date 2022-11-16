@@ -13,3 +13,28 @@ test('トップページで、キーワード検索の入力欄にキーワー�
   await t
     .expect(page.keywordInput.value).eql('hashtag1')
 })
+
+test('トップページで、キーワードを入力せずに「検索」ボタンを選択できないこと', async t => {
+  await t
+    .expect(page.keywordInput.value).eql('')
+    .expect(page.keywordSearchButton.hasAttribute('disabled')).ok()
+
+  await page.inputKeyword('hashtag1')
+
+  await t
+    .expect(page.keywordInput.value).eql('hashtag1')
+    .expect(page.keywordSearchButton.hasAttribute('disabled')).notOk()
+
+  await page.inputKeyword(' ')
+
+  await t
+    .expect(page.keywordInput.value).eql(' ')
+    .expect(page.keywordSearchButton.hasAttribute('disabled')).ok()
+
+  await page.inputKeyword('　')
+
+  await t
+    .expect(page.keywordInput.value).eql('　')
+    .expect(page.keywordSearchButton.hasAttribute('disabled')).ok()
+
+})

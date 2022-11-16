@@ -4,6 +4,7 @@ class Page {
   constructor() {
     this.title = Selector('[data-testid="title"]');
     this.keywordInput = Selector('[data-testid="keywordInput"]');
+    this.keywordSearchButton = Selector('[data-testid="keywordSearchButton"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (slideNth) => {
       const slide = this.slides.nth(slideNth);

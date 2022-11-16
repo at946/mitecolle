@@ -10,7 +10,7 @@ const Header: NextPage = () => {
       <div className='container'>
         <div className='navbar-brand'>
           <span className='navbar-item'>
-            <Link href="/">
+            <Link href='/'>
               <Image src='/logo.svg' alt='logo' height='40' width='166' />
             </Link>
           </span>
