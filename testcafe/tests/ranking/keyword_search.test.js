@@ -38,3 +38,12 @@ test('トップページで、キーワードを入力せずに「検索」ボ�
     .expect(page.keywordSearchButton.hasAttribute('disabled')).ok()
 
 })
+
+test('トップページで、キーワードを入力して「検索」ボタンを選択したとき、タイトルにもハッシュタグにもヒットするスライドがなかった場合、Not foundのメッセージが表示されること', async t => {
+  await page.inputKeyword('Not found')
+  await page.clickKeywordSearchButton()
+
+  await t
+    .expect(page.slides.count).eql(0)
+    .expect(page.message.innerText).eql('スライドが見つかりませんでした。')
+})

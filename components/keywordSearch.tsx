@@ -22,6 +22,7 @@ const KeywordSearch: NextPage = () => {
             <button
               className='button is-primary'
               data-testid='keywordSearchButton'
+              onClick={() => console.log(keyword)}
               disabled={!keyword.trim()}
             >
               検索

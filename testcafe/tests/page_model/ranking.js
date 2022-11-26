@@ -4,6 +4,7 @@ class Page {
   constructor() {
     this.title = Selector('[data-testid="title"]');
     this.keywordInput = Selector('[data-testid="keywordInput"]');
+    this.message = Selector('[data-testid="message"]');
     this.keywordSearchButton = Selector('[data-testid="keywordSearchButton"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (slideNth) => {
@@ -24,6 +25,10 @@ class Page {
 
   async inputKeyword(keyword) {
     await t.typeText(this.keywordInput, keyword, { replace: true })
+  }
+
+  async clickKeywordSearchButton() {
+    await t.click(this.keywordSearchButton)
   }
 
   async clickPaginationPrevious () {
