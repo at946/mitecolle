@@ -6,6 +6,7 @@ declare global {
       NEND_IS_ACTIVE?: boolean;
       NEXT_PUBLIC_GA_ID?: string;
       NEXT_PUBLIC_VERCEL_URL?: string;
+      NEXT_PUBLIC_GOOGLE_ADSENSE_ID?: string;
     }
   }
 }
