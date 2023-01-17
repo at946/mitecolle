@@ -2,7 +2,10 @@ import { Selector, t } from 'testcafe';
 
 class Page {
   constructor() {
-    this.title = Selector('[data-testid="title"]')
+    this.title = Selector('[data-testid="title"]');
+    this.keywordInput = Selector('[data-testid="keywordInput"]');
+    this.message = Selector('[data-testid="message"]');
+    this.keywordSearchButton = Selector('[data-testid="keywordSearchButton"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (slideNth) => {
       const slide = this.slides.nth(slideNth);
@@ -18,6 +21,14 @@ class Page {
     this.paginationLink = (nth) => { return this.paginationLinks.nth(nth) }
     this.paginationPrevious = Selector('[data-testid="pagination_previous"]')
     this.paginationNext = Selector('[data-testid="pagination_next"]')
+  }
+
+  async inputKeyword(keyword) {
+    await t.typeText(this.keywordInput, keyword, { replace: true })
+  }
+
+  async clickKeywordSearchButton() {
+    await t.click(this.keywordSearchButton)
   }
 
   async clickPaginationPrevious () {
