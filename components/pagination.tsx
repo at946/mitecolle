@@ -14,11 +14,11 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
 
   const createHref = (hrefPage: number): string => {
     if (!!keyword) {
-      return `/?page=${hrefPage}&keyword=${keyword}`
+      return `/?page=${hrefPage}&keyword=${keyword}`;
     } else {
-      return `/?page=${hrefPage}`
+      return `/?page=${hrefPage}`;
     }
-  }
+  };
 
   return (
     <section className='section'>
