@@ -6,7 +6,7 @@ import Hashtags from './hashtags';
 import { Slide } from '../../interfaces/slide';
 
 interface Props {
-  slide: Slide
+  slide: Slide;
 }
 
 const Slide: NextPage<Props> = ({ slide }) => {

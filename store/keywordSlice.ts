@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { keyword } from '../interfaces/keyword';
 
 export interface keywordState {
-  keyword: keyword
+  keyword: keyword;
 }
 
 const initialState: keywordState = {
-  keyword: ''
+  keyword: '',
 };
 
 export const keywordSlice = createSlice({
@@ -14,7 +14,7 @@ export const keywordSlice = createSlice({
   initialState,
   reducers: {
     setKeyword: (state, action: PayloadAction<keyword>) => {
-      state.keyword = action.payload
+      state.keyword = action.payload;
     },
   },
 });

@@ -3,7 +3,7 @@ import { Slides } from '../../interfaces/slides';
 import Slide from './slide';
 
 interface Props {
-  slides: Slides
+  slides: Slides;
 }
 
 const Slides: NextPage<Props> = ({ slides }) => {

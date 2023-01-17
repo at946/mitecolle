@@ -1,1 +1,1 @@
-export type keyword = string
+export type keyword = string;

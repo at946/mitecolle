@@ -57,3 +57,33 @@ test('トップページで、キーワードを入力して「検索」ボタ�
     .expect(page.slide(0).title.innerText).eql('One day 1')
     .expect(page.slide(1).title.innerText).eql('One day 2')
 })
+
+test('トップページで、キーワード検索でスライドが絞り込まれているとき、11以上のスライドがヒットした場合、ページネーションが正しく機能すること', async t => {
+  await page.inputKeyword('5')
+  await page.clickKeywordSearchButton()
+
+  await t
+    .expect(page.keywordInput.value).eql('5')
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).contains('5')
+    .expect(page.slide(9).title.innerText).contains('5')
+    .expect(page.paginationLinks.count).eql(2)
+
+  await page.clickPaginationNext()
+
+  await t
+    .expect(page.keywordInput.value).eql('5')
+    .expect(page.slides.count).eql(9)
+    .expect(page.slide(0).title.innerText).contains('5')
+    .expect(page.slide(8).title.innerText).contains('5')
+    .expect(page.paginationLinks.count).eql(2)
+
+  await page.clickPaginationPrevious()
+
+  await t
+    .expect(page.keywordInput.value).eql('5')
+    .expect(page.slides.count).eql(10)
+    .expect(page.slide(0).title.innerText).contains('5')
+    .expect(page.slide(9).title.innerText).contains('5')
+    .expect(page.paginationLinks.count).eql(2)
+})

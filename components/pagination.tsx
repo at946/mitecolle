@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { keyword } from '../interfaces/keyword';
+import { useAppSelector } from '../store/hook';
 
 interface Props {
   page: number;
@@ -7,11 +9,22 @@ interface Props {
 }
 
 const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
+  const keyword: keyword = useAppSelector((state) => state.keyword.keyword);
+  const keywordQuery: string = !!keyword ? `&keyword=${keyword}` : '';
+
+  const createHref = (hrefPage: number): string => {
+    if (!!keyword) {
+      return `/?page=${hrefPage}&keyword=${keyword}`
+    } else {
+      return `/?page=${hrefPage}`
+    }
+  }
+
   return (
     <section className='section'>
       <nav className='pagination is-centered is-rounded' role='navigation' aria-label='pagination'>
         {page > 1 ? (
-          <Link href={`/?page=${page - 1}`}>
+          <Link href={createHref(page - 1)}>
             <a className='pagination-previous' data-testid='pagination_previous'>
               Previous
             </a>
@@ -23,7 +36,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
         )}
 
         {page < maxPage ? (
-          <Link href={`/?page=${page + 1}`}>
+          <Link href={createHref(page + 1)}>
             <a className='pagination-next' data-testid='pagination_next'>
               Next
             </a>
@@ -37,7 +50,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
         <ul className='pagination-list'>
           {page > 1 && (
             <li>
-              <Link href='/'>
+              <Link href={createHref(1)}>
                 <a className='pagination-link' aria-label='1' data-testid='pagination_link'>
                   1
                 </a>
@@ -65,7 +78,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
           )}
           {page < maxPage && (
             <li>
-              <Link href={`/?page=${maxPage}`}>
+              <Link href={createHref(maxPage)}>
                 <a
                   className='pagination-link'
                   aria-label={String(maxPage)}

@@ -4,11 +4,18 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Layout from '../components/layout';
+
+// redux
+import { Provider } from 'react-redux';
+import { store } from '../store/store';
+
+// fontawesome
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  // GA
   const router = useRouter();
   useEffect(() => {
     if (!GA_TRACKING_ID) return;
@@ -23,9 +30,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 
