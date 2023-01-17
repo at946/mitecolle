@@ -3,29 +3,25 @@ import RankingTitle from '../components/rankingTitle';
 import KeywordSearch from '../components/keywordSearch';
 import Slides from '../components/slides/slides';
 import Pagination from '../components/pagination';
+import { keyword } from '../interfaces/keyword';
+import Message from '../components/message';
+import { Slides as IFSlides } from '../interfaces/slides';
 
-type Props = {
+interface Props {
   page: number;
   maxPage: number;
-  slides: [
-    {
-      id: string;
-      title: string;
-      url: string;
-      sharePoint: number;
-      iframeSrc: string;
-      width: number;
-      height: number;
-      hashtags: string;
-    },
-  ];
+  keyword: keyword;
+  slides: IFSlides;
 };
 
-const Home: NextPage<Props> = ({ page, maxPage, slides }) => {
+const Home: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
   return (
     <>
       <RankingTitle />
-      <KeywordSearch />
+      <KeywordSearch defaultKeyword={keyword} />
+      { slides.length < 1 &&
+        <Message message="スライドが見つかりませんでした。" />
+      }
       <Slides slides={slides} />
       <Pagination page={page} maxPage={maxPage} />
     </>
@@ -33,13 +29,17 @@ const Home: NextPage<Props> = ({ page, maxPage, slides }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const queryPage = context.query.page ? Number(context.query.page) : 1;
-  const res = await fetch(`${process.env.GET_RANKING_URL}?page=${queryPage}`);
+  const queryPage = isNaN(Number(context.query.page)) ? 1 : Number(context.query.page);
+  const keyword: keyword = !!context.query.keyword ? String(context.query.keyword) : ''
+  var queryParams = `page=${queryPage}`
+  if (keyword) { queryParams += `&keyword=${keyword}` }
+  const res = await fetch(`${process.env.GET_RANKING_URL}?${queryParams}`);
   const { page, maxPage, slides } = await res.json();
   return {
     props: {
       page,
       maxPage,
+      keyword,
       slides,
     },
   };

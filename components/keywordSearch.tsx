@@ -1,8 +1,24 @@
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { keyword } from '../interfaces/keyword';
 
-const KeywordSearch: NextPage = () => {
-  const [keyword, setKeyword] = useState('');
+interface Props {
+  defaultKeyword: keyword
+}
+
+const KeywordSearch: NextPage<Props> = ({ defaultKeyword }) => {
+  const [keyword, setKeyword] = useState(defaultKeyword);
+  const router = useRouter()
+
+  const search = (): void => {
+    router.push(`?keyword=${keyword}`)  
+  }
+
+  const keyDownOnKeywordInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
+    if (e.nativeEvent.isComposing || e.key !== 'Enter') return
+    search()
+  }
 
   return (
     <section className='section pb-0'>
@@ -14,6 +30,7 @@ const KeywordSearch: NextPage = () => {
               className='input'
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
+              onKeyDown={keyDownOnKeywordInput}
               placeholder='タイトルとハッシュタグで検索できます'
               data-testid='keywordInput'
             />
@@ -22,9 +39,9 @@ const KeywordSearch: NextPage = () => {
             <button
               className='button is-primary'
               data-testid='keywordSearchButton'
-              onClick={() => console.log(keyword)}
+              onClick={search}
               disabled={!keyword.trim()}
-            >
+              >
               検索
             </button>
           </div>

@@ -1,19 +1,9 @@
 import { NextPage } from 'next';
+import { Slides } from '../../interfaces/slides';
 import Slide from './slide';
 
 interface Props {
-  slides: [
-    {
-      id: string;
-      title: string;
-      url: string;
-      sharePoint: number;
-      iframeSrc: string;
-      width: number;
-      height: number;
-      hashtags: string;
-    },
-  ];
+  slides: Slides
 }
 
 const Slides: NextPage<Props> = ({ slides }) => {
@@ -22,15 +12,7 @@ const Slides: NextPage<Props> = ({ slides }) => {
       <div className='container'>
         {slides.map((slide) => (
           <div key={slide.id} className='section px-0'>
-            <Slide
-              title={slide.title}
-              url={slide.url}
-              sharePoint={slide.sharePoint}
-              iframeSrc={slide.iframeSrc}
-              width={slide.width}
-              height={slide.height}
-              hashtags={slide.hashtags}
-            />
+            <Slide slide={slide} />
           </div>
         ))}
       </div>
