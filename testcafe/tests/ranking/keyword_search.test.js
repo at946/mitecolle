@@ -47,3 +47,13 @@ test('トップページで、キーワードを入力して「検索」ボタ�
     .expect(page.slides.count).eql(0)
     .expect(page.message.innerText).eql('スライドが見つかりませんでした。')
 })
+
+test('トップページで、キーワードを入力して「検索」ボタンを選択したとき、タイトルかハッシュタグにヒットするスライドがあった場合、ヒットしたスライドだけが表示されること', async t => {
+  await page.inputKeyword('hashtag')
+  await page.clickKeywordSearchButton()
+
+  await t
+    .expect(page.slides.count).eql(2)
+    .expect(page.slide(0).title.innerText).eql('One day 1')
+    .expect(page.slide(1).title.innerText).eql('One day 2')
+})
