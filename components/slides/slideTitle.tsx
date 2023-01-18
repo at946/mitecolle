@@ -17,7 +17,7 @@ const slideTitle: NextPage<Props> = ({ title, url }: Props) => {
   };
 
   return (
-    <p>
+    <p style={{ wordWrap: 'break-word' }}>
       <a
         href={url}
         target='_blank'
