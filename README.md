@@ -1,5 +1,7 @@
 # mitecolle
 
+![a](public/ogp.png)
+
 mitecolle（みてこれ）は、Twitter でシェアされている今話題のスライドを展覧しているウェブアプリです。
 Docswell（ドクセル）、SlideShare、Speaker Deck で公開されているスライドを紹介しています。
 注目度の高いスライドでインプットの質が高まります！勉強になる！学びになる！
