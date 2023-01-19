@@ -2,7 +2,7 @@
   "data": [
     { "id": "oneday01", "title": "One day 1" , "url": "http://localhost:3000/one_day/1" , "sharePoint": 99, "iframeSrc": "http://localhost:3000/player/one_day/1" , "width":  800, "height": 600, "hashtags": "hashtag1,hashtag2" },
     { "id": "oneday02", "title": "One day 2" , "url": "http://localhost:3000/one_day/2" , "sharePoint": 98, "iframeSrc": "http://localhost:3000/player/one_day/2" , "width": 1600, "height": 900, "hashtags": "hashtag3" },
-    { "id": "oneday03", "title": "One day 3" , "url": "http://localhost:3000/one_day/3" , "sharePoint": 97, "iframeSrc": "http://localhost:3000/player/one_day/3" , "width":  800, "height": 600, "hashtags": "" },
+    { "id": "oneday03", "title": "One day 3" , "url": "http://localhost:3000/one_day/3" , "sharePoint": 97, "iframeSrc": "http://localhost:3000/player/one_day/3" , "width":  800, "height": 600, "hashtags": "hashtag1" },
     { "id": "oneday04", "title": "One day 4" , "url": "http://localhost:3000/one_day/4" , "sharePoint": 96, "iframeSrc": "http://localhost:3000/player/one_day/4" , "width":  800, "height": 600, "hashtags": "" },
     { "id": "oneday05", "title": "One day 5" , "url": "http://localhost:3000/one_day/5" , "sharePoint": 95, "iframeSrc": "http://localhost:3000/player/one_day/5" , "width":  800, "height": 600, "hashtags": "" },
     { "id": "oneday06", "title": "One day 6" , "url": "http://localhost:3000/one_day/6" , "sharePoint": 94, "iframeSrc": "http://localhost:3000/player/one_day/6" , "width":  800, "height": 600, "hashtags": "" },
