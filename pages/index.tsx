@@ -1,6 +1,6 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import Motion from '../components/motion';
 import RankingTitle from '../components/rankingTitle';
 import KeywordSearch from '../components/keywordSearch';
 import Slides from '../components/slides/slides';
@@ -26,13 +26,13 @@ const Home: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
   }, [dispatch, keyword]);
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <Motion>
       <RankingTitle />
       <KeywordSearch />
       {slides.length < 1 && <Message message='スライドが見つかりませんでした。' />}
       <Slides slides={slides} />
       <Pagination page={page} maxPage={maxPage} />
-    </motion.div>
+    </Motion>
   );
 };
 
