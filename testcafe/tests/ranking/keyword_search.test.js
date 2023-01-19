@@ -53,9 +53,9 @@ test('トップページで、キーワードを入力して「検索」ボタ�
   await page.clickKeywordSearchButton()
 
   await t
-    .expect(page.slides.count).eql(2)
+    .expect(page.slides.count).eql(3)
     .expect(page.slide(0).title.innerText).eql('One day 1')
-    .expect(page.slide(1).title.innerText).eql('One day 2')
+    .expect(page.slide(2).title.innerText).eql('One day 3')
 })
 
 test('トップページで、キーワード検索でスライドが絞り込まれているとき、11以上のスライドがヒットした場合、ページネーションが正しく機能すること', async t => {
