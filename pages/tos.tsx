@@ -12,7 +12,6 @@ const ToS: NextPage = () => {
         </p>
 
         <ol className='content' style={{ listStylePosition: 'inside' }}>
-
           <li className='title is-5'>規約の適用</li>
           <div className='content'>
             <p>本規約は、ユーザーと本サービスの利用に関わる一切の関係に適用されるものとします。</p>
@@ -139,7 +138,7 @@ const ToS: NextPage = () => {
             </ul>
           </div>
         </ol>
-        
+
         <div className='content'>最終更新日： 2023年1月20日</div>
       </section>
     </Motion>
