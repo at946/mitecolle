@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 
 const Footer: NextPage = () => {
   return (
-    <footer className='footer mt-auto py-5'>
+    <footer className='footer mt-auto py-5 has-background-white'>
       <div className='content has-text-centered'>
         <a
           href='https://twitter.com/at_946'

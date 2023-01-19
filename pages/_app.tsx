@@ -9,6 +9,9 @@ import Layout from '../components/layout';
 import { Provider } from 'react-redux';
 import { store } from '../store/store';
 
+// framer-motion
+import { AnimatePresence } from 'framer-motion';
+
 // fontawesome
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -32,7 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Layout>
-        <Component {...pageProps} />
+        <AnimatePresence mode='wait' onExitComplete={() => window.scrollTo(0, 0)}>
+          <Component key={router.asPath} {...pageProps} />
+        </AnimatePresence>
       </Layout>
     </Provider>
   );

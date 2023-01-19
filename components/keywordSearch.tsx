@@ -5,15 +5,10 @@ import { keyword } from '../interfaces/keyword';
 import { useAppDispatch, useAppSelector } from '../store/hook';
 import { setKeyword } from '../store/keywordSlice';
 
-interface Props {
-  defaultKeyword: keyword;
-}
-
-const KeywordSearch: NextPage<Props> = ({ defaultKeyword }) => {
+const KeywordSearch: NextPage = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const keyword: keyword = useAppSelector((state) => state.keyword.keyword);
-  // const [keyword, setKeyword] = useState(defaultKeyword);
 
   const search = (): void => {
     router.push(`?keyword=${keyword}`);
