@@ -3,9 +3,10 @@ import { Selector, t } from 'testcafe';
 class Page {
   constructor() {
     this.title = Selector('[data-testid="title"]');
-    this.keywordInput = Selector('[data-testid="keywordInput"]');
+    this.keywordInput = Selector('[data-testid="keyword_input"]');
+    this.keywordSearchButton = Selector('[data-testid="keyword_search_button"]');
+    this.cancelKeywordSearchLink = Selector('[data-testid="cancel_keyword_search_link"]');
     this.message = Selector('[data-testid="message"]');
-    this.keywordSearchButton = Selector('[data-testid="keywordSearchButton"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (slideNth) => {
       const slide = this.slides.nth(slideNth);
@@ -29,6 +30,10 @@ class Page {
 
   async clickKeywordSearchButton() {
     await t.click(this.keywordSearchButton)
+  }
+
+  async clickCancelKeywordSearchLink() {
+    await t.click(this.cancelKeywordSearchLink)
   }
 
   async clickPaginationPrevious () {
