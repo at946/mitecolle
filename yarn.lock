@@ -45,10 +45,10 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
-"@corex/deepmerge@^4.0.26":
-  version "4.0.26"
-  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.26.tgz#5ebd60608e5050a336f3163e68ac58152963a3aa"
-  integrity sha512-Tp0u2/h45uWbZhsjazK9W6WwwTVBqCIY+1qJHfy6QWN0qUw6vCWLnJhB+Gg9dpQZ26q3ygd6aj49DtXUDq56JQ==
+"@corex/deepmerge@^4.0.29":
+  version "4.0.37"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.37.tgz#873dcf71aee46596d7e385437b0d94770ef4c85f"
+  integrity sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==
 
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
@@ -692,15 +692,10 @@ camelcase@^5.3.1:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001332:
+caniuse-lite@^1.0.30001332, caniuse-lite@^1.0.30001445:
   version "1.0.30001446"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001446.tgz#6d4ba828ab19f49f9bcd14a8430d30feebf1e0c5"
   integrity sha512-fEoga4PrImGcwUUGEol/PoFCSBnSkA9drgdkxXkJLsUBOnJ8rs3zDv6ApqYXGQFOyMPsjh79naWhF4DAxbF8rw==
-
-caniuse-lite@^1.0.30001445:
-  version "1.0.30001445"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001445.tgz#cf2d4eb93f2bcdf0310de9dd6d18be271bc0b447"
-  integrity sha512-8sdQIdMztYmzfTMO6KfLny878Ln9c2M0fc7EH60IjlP4Dc4PiCy7K2Vl3ITmWgOyPgVQKa5x+UP/KqFsxj4mBg==
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1031,9 +1026,9 @@ eslint-config-next@12.1.6:
     eslint-plugin-react-hooks "^4.5.0"
 
 eslint-config-prettier@^8.5.0:
-  version "8.5.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.5.0.tgz#5a81680ec934beca02c7b1a61cf8ca34b66feab1"
-  integrity sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==
+  version "8.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
+  integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
 
 eslint-import-resolver-node@^0.3.6:
   version "0.3.6"
@@ -2099,7 +2094,7 @@ minimist-options@4.1.0:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
-minimist@^1.2.0, minimist@^1.2.6:
+minimist@^1.2.0, minimist@^1.2.6, minimist@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
@@ -2206,17 +2201,17 @@ negotiator@^0.6.2:
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
 next-redux-wrapper@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-8.0.0.tgz#588f2d89146c60c77d4a40c0af7e5282acfe4773"
-  integrity sha512-zKRdpvDeqNXQr1j5DUWwsB2fz6XpHR32iy2qJGItTKLsbLB9GvtxDL9b4mFCfhDvnzy5dw97UqMjWDpFY8h0zA==
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/next-redux-wrapper/-/next-redux-wrapper-8.1.0.tgz#d9c135f1ceeb2478375bdacd356eb9db273d3a07"
+  integrity sha512-2hIau0hcI6uQszOtrvAFqgc0NkZegKYhBB7ZAKiG3jk7zfuQb4E7OV9jfxViqqojh3SEHdnFfPkN9KErttUKuw==
 
 next-sitemap@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.6.tgz#34586f5a788bae013893836142c726c2cb1ae04c"
-  integrity sha512-XQ1WQuW5/tkgkqxKhW898nvnuGghLK/raCsP0CkBTuB/Zyl3abF06jzkWQ0747ubWSCyDHdB9nP3SZdyMW0uIw==
+  version "3.1.45"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.45.tgz#3ac9a18d2f9c13da27267ea9c257da8eac237a59"
+  integrity sha512-8vyvWC8KT8RIEUL9Vfiae9yGuIIiJ1IpepzbFtwZx43BaKsoi/Zk9OlmPKuQouVY726xwN7uLZPtgl2l2U+9Ug==
   dependencies:
-    "@corex/deepmerge" "^4.0.26"
-    minimist "^1.2.6"
+    "@corex/deepmerge" "^4.0.29"
+    minimist "^1.2.7"
 
 next@12.1.6:
   version "12.1.6"
@@ -2531,9 +2526,9 @@ prelude-ls@^1.2.1:
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
 prettier@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
-  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
+  integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
