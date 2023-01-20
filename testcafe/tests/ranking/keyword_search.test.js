@@ -87,3 +87,22 @@ test('トップページで、キーワード検索でスライドが絞り込�
     .expect(page.slide(9).title.innerText).contains('5')
     .expect(page.paginationLinks.count).eql(2)
 })
+
+test('ランキングページで、キーワード検索中のとき、検索解除リンクを選択したとき、キーワード検索が解除されること', async t => {
+  await t.expect(page.cancelKeywordSearchLink.exists).notOk()
+
+  await page.inputKeyword('hashtag')
+  await page.clickKeywordSearchButton()
+
+  await t
+    .expect(page.keywordInput.value).eql('hashtag')
+    .expect(page.slides.count).eql(3)
+    .expect(page.cancelKeywordSearchLink.exists).ok()
+
+  await page.clickCancelKeywordSearchLink()
+
+  await t
+    .expect(page.keywordInput.value).eql('')
+    .expect(page.slides.count).eql(10)
+    .expect(page.cancelKeywordSearchLink.exists).notOk()
+})

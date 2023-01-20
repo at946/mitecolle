@@ -10,6 +10,7 @@ import { keyword } from '../interfaces/keyword';
 import { Slides as IFSlides } from '../interfaces/slides';
 import { useAppDispatch } from '../store/hook';
 import { setKeyword } from '../store/keywordSlice';
+import { setIsSearched } from '../store/searchStateSlice';
 
 interface Props {
   page: number;
@@ -23,6 +24,7 @@ const Home: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
 
   useEffect(() => {
     dispatch(setKeyword(keyword));
+    dispatch(setIsSearched(!!keyword));
   }, [dispatch, keyword]);
 
   return (
