@@ -9,9 +9,6 @@ import Layout from '../components/common/layout';
 import { Provider } from 'react-redux';
 import { store } from '../store/store';
 
-// framer-motion
-import { AnimatePresence } from 'framer-motion';
-
 // fontawesome
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
