@@ -24,7 +24,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
     <section className='section'>
       <nav className='pagination is-centered is-rounded' role='navigation' aria-label='pagination'>
         {page > 1 ? (
-          <Link href={createHref(page - 1)} scroll={false}>
+          <Link href={createHref(page - 1)}>
             <a className='pagination-previous' data-testid='pagination_previous'>
               Previous
             </a>
@@ -36,7 +36,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
         )}
 
         {page < maxPage ? (
-          <Link href={createHref(page + 1)} scroll={false}>
+          <Link href={createHref(page + 1)}>
             <a className='pagination-next' data-testid='pagination_next'>
               Next
             </a>
@@ -50,7 +50,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
         <ul className='pagination-list'>
           {page > 1 && (
             <li>
-              <Link href={createHref(1)} scroll={false}>
+              <Link href={createHref(1)}>
                 <a className='pagination-link' aria-label='1' data-testid='pagination_link'>
                   1
                 </a>
@@ -78,7 +78,7 @@ const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
           )}
           {page < maxPage && (
             <li>
-              <Link href={createHref(maxPage)} scroll={false}>
+              <Link href={createHref(maxPage)}>
                 <a
                   className='pagination-link'
                   aria-label={String(maxPage)}

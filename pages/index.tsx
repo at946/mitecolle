@@ -1,11 +1,11 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { useEffect } from 'react';
-import Motion from '../components/motion';
+import Motion from '../components/common/motion';
 import RankingTitle from '../components/rankingTitle';
 import KeywordSearch from '../components/keywordSearch';
 import Slides from '../components/slides/slides';
 import Pagination from '../components/pagination';
-import Message from '../components/message';
+import Message from '../components/common/message';
 import { keyword } from '../interfaces/keyword';
 import { Slides as IFSlides } from '../interfaces/slides';
 import { useAppDispatch } from '../store/hook';

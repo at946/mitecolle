@@ -49,7 +49,7 @@ const KeywordSearch: NextPage = () => {
         </div>
         {isSearched && (
           <div className='has-text-centered'>
-            <Link href='/' scroll={false}>
+            <Link href='/'>
               <a className='button is-ghost' data-testid='cancel_keyword_search_link'>
                 検索解除
               </a>
