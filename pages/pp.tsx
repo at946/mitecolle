@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Motion from '../components/motion';
+import Motion from '../components/common/motion';
 
 const PP: NextPage = () => {
   return (

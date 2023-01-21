@@ -6,12 +6,12 @@ const Footer: NextPage = () => {
     <footer className='footer mt-auto py-5 has-background-white'>
       <div className='content has-text-centered'>
         <div className='tags is-centered mb-1'>
-          <Link href='/tos' scroll={false}>
+          <Link href='/tos'>
             <a className='tag is-white' data-testid='link_to_tos'>
               利用規約
             </a>
           </Link>
-          <Link href='/pp' scroll={false}>
+          <Link href='/pp'>
             <a className='tag is-white' data-testid='link_to_pp'>
               プライバシーポリシー
             </a>
