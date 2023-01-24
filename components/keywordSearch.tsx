@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import * as gtag from '../lib/gtag';
 import { keyword } from '../interfaces/keyword';
 import { useAppDispatch, useAppSelector } from '../store/hook';
 import { setKeyword } from '../store/keywordSlice';
@@ -13,12 +14,26 @@ const KeywordSearch: NextPage = () => {
 
   const search = (): void => {
     if (!keyword) return;
+    gtag.event({
+      action: 'search_keyword',
+      category: 'engagement',
+      label: 'keyword',
+      value: keyword,
+    });
     router.push(`?keyword=${keyword}`);
   };
 
   const keyDownOnKeywordInput = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.nativeEvent.isComposing || e.key !== 'Enter') return;
     search();
+  };
+
+  const unsearch = (): void => {
+    gtag.event({
+      action: 'unsearch',
+      category: 'engagement',
+      label: 'keyword',
+    });
   };
 
   return (
@@ -50,7 +65,11 @@ const KeywordSearch: NextPage = () => {
         {isSearched && (
           <div className='has-text-centered'>
             <Link href='/'>
-              <a className='button is-ghost' data-testid='cancel_keyword_search_link'>
+              <a
+                className='button is-ghost'
+                onClick={unsearch}
+                data-testid='cancel_keyword_search_link'
+              >
                 検索解除
               </a>
             </Link>

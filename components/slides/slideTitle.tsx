@@ -1,3 +1,5 @@
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NextPage } from 'next';
 import * as gtag from '../../lib/gtag';
 
@@ -17,16 +19,16 @@ const slideTitle: NextPage<Props> = ({ title, url }: Props) => {
   };
 
   return (
-    <p style={{ wordWrap: 'break-word' }}>
+    <p className='has-text-dark has-text-weight-bold is-size-5' style={{ wordWrap: 'break-word' }}>
+      <span data-testid='slide_title'>{title}</span>
       <a
         href={url}
         target='_blank'
         rel='noopener noreferrer'
-        className='has-text-dark has-text-weight-bold is-size-5'
         onClick={clickTitle}
-        data-testid='slide_title'
+        data-testid='slide_title_link'
       >
-        {title}
+        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-3' />
       </a>
     </p>
   );
