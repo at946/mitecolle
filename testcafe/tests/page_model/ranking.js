@@ -12,6 +12,7 @@ class Page {
       const slide = this.slides.nth(slideNth);
       return {
         title: slide.find('[data-testid="slide_title"]'),
+        titleLink: slide.find('[data-testid="slide_title_link"]'),
         iframe: slide.find('[data-testid="slide_iframe"]'),
         shareButton: slide.find('[data-testid="slide_share_button"]'),
         hashtags: slide.find('[data-testid="hashtag"]'),

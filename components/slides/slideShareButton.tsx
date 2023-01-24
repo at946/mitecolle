@@ -32,7 +32,7 @@ const SlideShareButton: NextPage<Props> = ({ title, url }: Props) => {
       data-testid='slide_share_button'
     >
       <FontAwesomeIcon icon={faTwitter} className='mr-2' />
-      私もシェア
+      Share
     </a>
   );
 };
