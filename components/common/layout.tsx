@@ -13,7 +13,7 @@ const Layout: NextPage<Props> = ({ children }: Props) => {
     <div className='is-flex is-flex-direction-column' style={{ minHeight: '100vh' }}>
       <MyHead />
       <Header />
-      <main>{children}</main>
+      <main className='section has-text-centered'>{children}</main>
       <Footer />
     </div>
   );

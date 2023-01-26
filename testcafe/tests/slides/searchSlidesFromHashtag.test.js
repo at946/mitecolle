@@ -1,10 +1,10 @@
-import page from '../page_model/ranking';
+import page from '../page_model/slides';
 import urls from '../utils/urls';
 
-fixture('ranking/show_ranking')
-  .page(urls.ranking)
+fixture('slides/searchSlidesFromHashtag')
+  .page(urls.slides)
 
-test('ランキングページで、スライドのハッシュタグを選択したとき、そのハッシュタグでスライドが検索されること', async t => {
+test('スライドページで、スライドのハッシュタグを選択したとき、そのハッシュタグでスライドが検索されること', async t => {
   await t
     .expect(page.slides.count).eql(10)
     .expect(page.keywordInput.value).eql('')

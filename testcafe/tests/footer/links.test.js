@@ -3,7 +3,7 @@ import getUrl from '../utils/getUrl';
 import urls from '../utils/urls';
 
 fixture('footer/go_to_developer_account')
-  .page(urls.ranking)
+  .page(urls.top)
 
 test('フッターでコピーライトを選択したとき、開発者のTwitterアカウントに遷移すること', async t => {
   await t
@@ -13,13 +13,13 @@ test('フッターでコピーライトを選択したとき、開発者のTwitt
 });
 
 test('フッターで利用規約を選択したとき、利用規約ページに遷移すること', async t => {
-  await t.expect(getUrl()).eql(urls.ranking)
+  await t.expect(getUrl()).eql(urls.top)
   await t.click(footer.linkToToS)
   await t.expect(getUrl()).eql(urls.tos)
 })
 
 test('フッターでプライバシーポリシーを選択したとき、プライバシーポリシーページに遷移すること', async t => {
-  await t.expect(getUrl()).eql(urls.ranking)
+  await t.expect(getUrl()).eql(urls.top)
   await t.click(footer.linkToPP)
   await t.expect(getUrl()).eql(urls.pp)
 })
