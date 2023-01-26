@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-const MyHead: NextPage = () => {
-  const title = 'mitecolle';
-  const description = `mitecolle（みてこれ）は、Twitterでシェアされている今話題のスライドを展覧しているウェブアプリです。
-    Docswell（ドクセル）、SlideShare、Speaker Deckで公開されているスライドを紹介しています。
-    注目度の高いスライドでインプットの質が高まります！勉強になる！学びになる！`;
+const title = 'mitecolle';
+const description = `mitecolle（みてこれ）は、Twitterでシェアされている今話題のスライドを展覧しているウェブアプリです。
+Docswell（ドクセル）、SlideShare、Speaker Deckで公開されているスライドを紹介しています。
+注目度の高いスライドでインプットの質が高まります！勉強になる！学びになる！`;
 
+const MyHead: NextPage = () => {
   return (
     <Head>
       <title key='title'>{title}</title>

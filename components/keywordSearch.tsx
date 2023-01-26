@@ -64,7 +64,7 @@ const KeywordSearch: NextPage = () => {
         </div>
         {isSearched && (
           <div className='has-text-centered'>
-            <Link href='/'>
+            <Link href='/slides'>
               <a
                 className='button is-ghost'
                 onClick={unsearch}

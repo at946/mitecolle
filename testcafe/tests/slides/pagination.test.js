@@ -1,10 +1,10 @@
-import page from '../page_model/ranking';
+import page from '../page_model/slides';
 import urls from '../utils/urls';
 
-fixture('ranking/pagination')
-  .page(urls.ranking)
+fixture('slides/pagination')
+  .page(urls.slides)
 
-test('トップページで、ページネーションできること', async t => {
+test('スライドページで、ページネーションできること', async t => {
   await t
     .expect(page.slides.count).eql(10)
     .expect(page.slide(0).title.innerText).eql('One day 1')
@@ -18,7 +18,7 @@ test('トップページで、ページネーションできること', async t 
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
   // query parameterでページネーション
-  await t.navigateTo(`${urls.ranking}?page=5&type=day`)
+  await t.navigateTo(`${urls.slides}?page=5&type=day`)
 
   await t
     .expect(page.slides.count).eql(10)
@@ -100,8 +100,8 @@ test('トップページで、ページネーションできること', async t 
 
 })
 
-test('トップページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
-  await t.navigateTo(`${urls.ranking}?page=11`)
+test('スライドページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
+  await t.navigateTo(`${urls.slides}?page=11`)
 
   await t
     .expect(page.slides.count).eql(10)
@@ -115,7 +115,7 @@ test('トップページで、ページ外の値がURLに付与された場合�
     .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
-  await t.navigateTo(`${urls.ranking}?page=hello`)
+  await t.navigateTo(`${urls.slides}?page=hello`)
 
   await t
     .expect(page.slides.count).eql(10)

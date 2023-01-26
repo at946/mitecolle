@@ -21,7 +21,7 @@ const Hashtags: NextPage<Props> = (props: Props) => {
   return (
     <div className={`tags is-centered ${props.className}`}>
       {hashtags.map((hashtag, index) => (
-        <Link key={index} href={`/?keyword=${hashtag}`}>
+        <Link key={index} href={`/slides?keyword=${hashtag}`}>
           <a
             className={`tag is-rounded is-light is-primary`}
             onClick={() => searchHashtag(hashtag)}

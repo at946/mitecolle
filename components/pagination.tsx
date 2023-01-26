@@ -10,13 +10,12 @@ interface Props {
 
 const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
   const keyword: keyword = useAppSelector((state) => state.keyword.keyword);
-  const keywordQuery: string = !!keyword ? `&keyword=${keyword}` : '';
 
   const createHref = (hrefPage: number): string => {
     if (!!keyword) {
-      return `/?page=${hrefPage}&keyword=${keyword}`;
+      return `/slides?page=${hrefPage}&keyword=${keyword}`;
     } else {
-      return `/?page=${hrefPage}`;
+      return `/slides?page=${hrefPage}`;
     }
   };
 

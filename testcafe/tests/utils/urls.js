@@ -1,5 +1,6 @@
 const urls = {
-  ranking: `${process.env.SITE_URL}/`,
+  top: `${process.env.SITE_URL}/`,
+  slides: `${process.env.SITE_URL}/slides`,
   tos: `${process.env.SITE_URL}/tos`,
   pp: `${process.env.SITE_URL}/pp`,
 };

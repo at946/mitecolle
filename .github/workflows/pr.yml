@@ -34,7 +34,7 @@ jobs:
           yarn build
           yarn start &
         env:
-          GET_RANKING_URL: http://localhost:3001/ranking
+          GET_SLIDES_URL: http://localhost:3001/ranking
       - run: yarn global add testcafe
       - name: start testcafe
         run: ./run.sh
