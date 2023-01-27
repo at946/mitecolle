@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { keyword } from '../interfaces/keyword';
-import { useAppSelector } from '../store/hook';
+import { keyword } from '../../interfaces/keyword';
+import { useAppSelector } from '../../store/hook';
 
 interface Props {
   page: number;

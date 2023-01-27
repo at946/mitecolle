@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import * as gtag from '../../lib/gtag';
+import * as gtag from '../../../lib/gtag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 

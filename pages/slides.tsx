@@ -1,10 +1,10 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { useEffect } from 'react';
 import Motion from '../components/common/motion';
-import PageTitle from '../components/pageTitle';
-import KeywordSearch from '../components/keywordSearch';
+import PageTitle from '../components/common/pageTitle';
+import KeywordSearch from '../components/slides/keywordSearch';
 import Slides from '../components/slides/slides';
-import Pagination from '../components/pagination';
+import Pagination from '../components/common/pagination';
 import Message from '../components/common/message';
 import { keyword } from '../interfaces/keyword';
 import { Slides as IFSlides } from '../interfaces/slides';
@@ -29,7 +29,7 @@ const SlidesPage: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
 
   return (
     <Motion>
-      <PageTitle title='slides' help='Twitterで今シェアされているスライドを集めました。' />
+      <PageTitle title='Slides' help='Twitterで今シェアされているスライドを集めました。' />
       <KeywordSearch />
       {slides.length < 1 && <Message message='スライドが見つかりませんでした。' />}
       <Slides slides={slides} />

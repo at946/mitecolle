@@ -1,7 +1,7 @@
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NextPage } from 'next';
-import * as gtag from '../../lib/gtag';
+import * as gtag from '../../../lib/gtag';
 
 interface Props {
   title: string;
