@@ -1,5 +1,5 @@
-import head from "../page_model/head";
-import urls from "../utils/urls";
+import head from "../../utils/page_model/head";
+import urls from "../../utils/functions/urls";
 
 fixture('ogp')
 

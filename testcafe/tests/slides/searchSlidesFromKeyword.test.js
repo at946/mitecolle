@@ -1,5 +1,5 @@
-import page from '../page_model/slides';
-import urls from "../utils/urls";
+import page from '../../utils/page_model/slides';
+import urls from "../../utils/functions/urls";
 
 fixture('slides/searchSlidesFromKeyword')
   .page(urls.slides)

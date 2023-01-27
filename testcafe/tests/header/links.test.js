@@ -1,6 +1,6 @@
-import header from '../page_model/header';
-import getUrl from '../utils/getUrl';
-import urls from '../utils/urls';
+import header from '../../utils/page_model/header';
+import getUrl from '../../utils/functions/getUrl';
+import urls from '../../utils/functions/urls';
 
 fixture('footer/go_to_developer_account')
   .page(urls.top)
