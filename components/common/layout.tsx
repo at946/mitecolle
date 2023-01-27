@@ -16,7 +16,7 @@ const Layout: NextPage<Props> = ({ children }: Props) => {
     >
       <MyHead />
       <Header />
-      <main className='has-text-centered mx-auto' style={{ maxWidth: '1000px' }}>
+      <main className='has-text-centered mx-auto' style={{ maxWidth: '1000px', width: '100vw' }}>
         {children}
       </main>
       <Footer />
