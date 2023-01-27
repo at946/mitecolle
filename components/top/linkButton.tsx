@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import Link from "next/link";
+import { NextPage } from 'next';
+import Link from 'next/link';
 
 interface Props {
-  text: string,
-  href: string,
-  testid?: string,
+  text: string;
+  href: string;
+  testid?: string;
 }
 
 const LinkButton: NextPage<Props> = ({ text, href, testid }) => {
@@ -14,7 +14,7 @@ const LinkButton: NextPage<Props> = ({ text, href, testid }) => {
         {text}
       </a>
     </Link>
-  )
-}
+  );
+};
 
 export default LinkButton;

@@ -1,21 +1,28 @@
-import type { NextPage } from 'next';
-import Link from 'next/link';
+import type { GetServerSideProps, NextPage } from 'next';
+import Event from '../interfaces/event';
 import Motion from '../components/common/motion';
 import PageTitle from '../components/common/pageTitle';
+import Events from '../components/events/events';
 
-const History: NextPage = () => {
+interface Props {
+  events: Event[];
+}
+
+const History: NextPage<Props> = ({ events }) => {
   return (
     <Motion>
       <PageTitle title='Events' help='イベントのスライドをハッシュタグから集めました。' />
-      <div className='section buttons is-justify-content-center'>
-        <Link href="/">
-          <a className="button is-primary">
-            top
-          </a>
-        </Link>
-      </div>
+      <Events events={events} />
     </Motion>
   );
+};
+
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
+  const res = await fetch(process.env.GET_EVENTS_URL);
+  const events = await res.json();
+  return {
+    props: { events },
+  };
 };
 
 export default History;

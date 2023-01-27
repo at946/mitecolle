@@ -8,8 +8,8 @@ const Home: NextPage = () => {
     <Motion>
       <PageTitle title='mitecolle' help='シェアされているスライドを集めました。' />
       <div className='section buttons is-justify-content-center'>
-        <LinkButton text="Slides" href="/slides" testid="slides_link_button" />
-        <LinkButton text="Events" href="/events" testid="events_link_button" />
+        <LinkButton text='Slides' href='/slides' testid='slides_link_button' />
+        <LinkButton text='Events' href='/events' testid='events_link_button' />
       </div>
     </Motion>
   );
