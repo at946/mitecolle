@@ -1,6 +1,6 @@
-import top from '../page_model/top';
-import getUrl from '../utils/getUrl';
-import urls from "../utils/urls";
+import top from '../../utils/page_model/top';
+import getUrl from '../../utils/functions/getUrl';
+import urls from "../../utils/functions/urls";
 
 fixture('top/links')
 .page(urls.top)
