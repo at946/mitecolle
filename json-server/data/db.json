@@ -1,5 +1,5 @@
 {
-  "data": [
+  "slides": [
     { "id": "oneday01", "title": "One day 1" , "url": "http://localhost:3000/one_day/1" , "iframeSrc": "http://localhost:3000/player/one_day/1" , "width":  800, "height": 600, "hashtags": "hashtag1,hashtag2" },
     { "id": "oneday02", "title": "One day 2" , "url": "http://localhost:3000/one_day/2" , "iframeSrc": "http://localhost:3000/player/one_day/2" , "width": 1600, "height": 900, "hashtags": "hashtag3" },
     { "id": "oneday03", "title": "One day 3" , "url": "http://localhost:3000/one_day/3" , "iframeSrc": "http://localhost:3000/player/one_day/3" , "width":  800, "height": 600, "hashtags": "hashtag1" },
@@ -99,5 +99,28 @@
     { "id": "oneday97", "title": "One day 97", "url": "http://localhost:3000/one_day/97", "iframeSrc": "http://localhost:3000/player/one_day/97", "width": 1600, "height": 900, "hashtags": "" },
     { "id": "oneday98", "title": "One day 98", "url": "http://localhost:3000/one_day/98", "iframeSrc": "http://localhost:3000/player/one_day/98", "width":  800, "height": 600, "hashtags": "" },
     { "id": "oneday99", "title": "One day 99", "url": "http://localhost:3000/one_day/99", "iframeSrc": "http://localhost:3000/player/one_day/99", "width":  800, "height": 600, "hashtags": "" }
+  ],
+  "events": [
+    { "hashtag": "hashtag1" , "eventName": "Sample Event 1",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-01", "endDate": "2023-01-02", "slideCount": 10 },
+    { "hashtag": "hashtag2" , "eventName": "Sample Event 2",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-02", "endDate": "2023-01-03", "slideCount": 20 },
+    { "hashtag": "hashtag3" , "eventName": "Sample Event 3",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-03", "endDate": "2023-01-04", "slideCount": 30 },
+    { "hashtag": "hashtag4" , "eventName": "Sample Event 4",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-04", "endDate": "2023-01-05", "slideCount": 40 },
+    { "hashtag": "hashtag5" , "eventName": "Sample Event 5",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-05", "endDate": "2023-01-06", "slideCount": 50 },
+    { "hashtag": "hashtag6" , "eventName": "Sample Event 6",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-06", "endDate": "2023-01-07", "slideCount": 10 },
+    { "hashtag": "hashtag7" , "eventName": "Sample Event 7",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-07", "endDate": "2023-01-08", "slideCount": 20 },
+    { "hashtag": "hashtag8" , "eventName": "Sample Event 8",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-08", "endDate": "2023-01-09", "slideCount": 30 },
+    { "hashtag": "hashtag9" , "eventName": "Sample Event 9",  "eventUrl": "http://localhost:3000", "startDate": "2023-01-09", "endDate": "2023-01-10", "slideCount": 40 },
+    { "hashtag": "hashtag10", "eventName": "Sample Event 10", "eventUrl": "http://localhost:3000", "startDate": "2023-01-10", "endDate": "2023-01-11", "slideCount": 50 },
+    { "hashtag": "hashtag11", "eventName": "Sample Event 11", "eventUrl": "http://localhost:3000", "startDate": "2023-01-11", "endDate": "2023-01-12", "slideCount": 10 },
+    { "hashtag": "hashtag12", "eventName": "Sample Event 12", "eventUrl": "http://localhost:3000", "startDate": "2023-01-12", "endDate": "2023-01-13", "slideCount": 20 },
+    { "hashtag": "hashtag13", "eventName": "Sample Event 13", "eventUrl": "http://localhost:3000", "startDate": "2023-01-13", "endDate": "2023-01-14", "slideCount": 30 },
+    { "hashtag": "hashtag14", "eventName": "Sample Event 14", "eventUrl": "http://localhost:3000", "startDate": "2023-01-14", "endDate": "2023-01-15", "slideCount": 40 },
+    { "hashtag": "hashtag15", "eventName": "Sample Event 15", "eventUrl": "http://localhost:3000", "startDate": "2023-01-15", "endDate": "2023-01-16", "slideCount": 50 },
+    { "hashtag": "hashtag16", "eventName": "Sample Event 16", "eventUrl": "http://localhost:3000", "startDate": "2023-01-16", "endDate": "2023-01-17", "slideCount": 60 },
+    { "hashtag": "hashtag17", "eventName": "Sample Event 17", "eventUrl": "http://localhost:3000", "startDate": "2023-01-17", "endDate": "2023-01-18", "slideCount": 10 },
+    { "hashtag": "hashtag18", "eventName": "Sample Event 18", "eventUrl": "http://localhost:3000", "startDate": "2023-01-18", "endDate": "2023-01-19", "slideCount": 20 },
+    { "hashtag": "hashtag19", "eventName": "Sample Event 19", "eventUrl": "http://localhost:3000", "startDate": "2023-01-19", "endDate": "2023-01-20", "slideCount": 30 },
+    { "hashtag": "hashtag20", "eventName": "Sample Event 20", "eventUrl": "http://localhost:3000", "startDate": "2023-01-20", "endDate": "2023-01-21", "slideCount": 40 },
+    { "hashtag": "hashtag21", "eventName": "Sample Event 21", "eventUrl": "http://localhost:3000", "startDate": "2023-01-21", "endDate": "2023-01-22", "slideCount": 50 }
   ]
 }

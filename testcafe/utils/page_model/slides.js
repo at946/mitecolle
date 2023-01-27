@@ -16,37 +16,41 @@ class Page {
         iframe: slide.find('[data-testid="slide_iframe"]'),
         shareButton: slide.find('[data-testid="slide_share_button"]'),
         hashtags: slide.find('[data-testid="hashtag"]'),
-        hashtag: (hashtagNth) => { return slide.find('[data-testid="hashtag"]').nth(hashtagNth) },
+        hashtag: (hashtagNth) => {
+          return slide.find('[data-testid="hashtag"]').nth(hashtagNth);
+        },
       };
     };
-    this.paginationLinks = Selector('[data-testid="pagination_link"]')
-    this.paginationLink = (nth) => { return this.paginationLinks.nth(nth) }
-    this.paginationPrevious = Selector('[data-testid="pagination_previous"]')
-    this.paginationNext = Selector('[data-testid="pagination_next"]')
+    this.paginationLinks = Selector('[data-testid="pagination_link"]');
+    this.paginationLink = (nth) => {
+      return this.paginationLinks.nth(nth);
+    };
+    this.paginationPrevious = Selector('[data-testid="pagination_previous"]');
+    this.paginationNext = Selector('[data-testid="pagination_next"]');
   }
 
   async inputKeyword(keyword) {
-    await t.typeText(this.keywordInput, keyword, { replace: true })
+    await t.typeText(this.keywordInput, keyword, { replace: true });
   }
 
   async clickKeywordSearchButton() {
-    await t.click(this.keywordSearchButton)
+    await t.click(this.keywordSearchButton);
   }
 
   async clickCancelKeywordSearchLink() {
-    await t.click(this.cancelKeywordSearchLink)
+    await t.click(this.cancelKeywordSearchLink);
   }
 
-  async clickPaginationPrevious () {
-    await t.click(this.paginationPrevious)
+  async clickPaginationPrevious() {
+    await t.click(this.paginationPrevious);
   }
 
-  async clickPaginationNext () {
-    await t.click(this.paginationNext)
+  async clickPaginationNext() {
+    await t.click(this.paginationNext);
   }
-  
-  async clickPagination (page) {
-    await t.click(this.paginationLinks.withText(page))
+
+  async clickPagination(page) {
+    await t.click(this.paginationLinks.withText(page));
   }
 }
 

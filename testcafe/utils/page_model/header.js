@@ -7,7 +7,7 @@ class Header {
   }
 
   async clickLogo() {
-    await t.click(this.logo)
+    await t.click(this.logo);
   }
 }
 
