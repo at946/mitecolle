@@ -32,7 +32,9 @@ router.render = (req, res) => {
       slides: resSlides,
     });
   } else {
-    res.send(res.locals.data);
+    res.send({
+      events: res.locals.data,
+    });
   }
 };
 

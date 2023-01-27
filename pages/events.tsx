@@ -19,7 +19,7 @@ const History: NextPage<Props> = ({ events }) => {
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const res = await fetch(process.env.GET_EVENTS_URL);
-  const events = await res.json();
+  const { events } = await res.json();
   return {
     props: { events },
   };
