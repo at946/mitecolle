@@ -4,8 +4,12 @@ import Link from 'next/link';
 
 const Header: NextPage = () => {
   return (
-    <nav className='navbar px-5' role='navigation' aria-label='main navigation'>
-      <div className='container'>
+    <nav
+      className='navbar has-background-light px-5'
+      role='navigation'
+      aria-label='main navigation'
+    >
+      <div className='container mx-auto' style={{ maxWidth: '1000px' }}>
         <div className='navbar-brand'>
           <span className='navbar-item'>
             <Link href='/'>
