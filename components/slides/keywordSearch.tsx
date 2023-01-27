@@ -1,10 +1,10 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import * as gtag from '../lib/gtag';
-import { keyword } from '../interfaces/keyword';
-import { useAppDispatch, useAppSelector } from '../store/hook';
-import { setKeyword } from '../store/keywordSlice';
+import * as gtag from '../../lib/gtag';
+import { keyword } from '../../interfaces/keyword';
+import { useAppDispatch, useAppSelector } from '../../store/hook';
+import { setKeyword } from '../../store/keywordSlice';
 
 const KeywordSearch: NextPage = () => {
   const router = useRouter();

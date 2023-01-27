@@ -3,7 +3,7 @@ import SlideTitle from './slideTitle';
 import SlideIframe from './slideIframe';
 import SlideShareButton from './slideShareButton';
 import Hashtags from './hashtags';
-import { Slide } from '../../interfaces/slide';
+import { Slide } from '../../../interfaces/slide';
 
 interface Props {
   slide: Slide;

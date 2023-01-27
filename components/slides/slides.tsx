@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { Slides } from '../../interfaces/slides';
-import Slide from './slide';
+import Slide from './slide/slide';
 
 interface Props {
   slides: Slides;
