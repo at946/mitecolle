@@ -8,13 +8,15 @@ interface Props {
 
 const Events: NextPage<Props> = ({ events }) => {
   return (
-    <div className='columns is-multiline section'>
-      {events.map((event, index) => (
-        <div className='column is-4' key={index}>
-          <EventCard event={event} />
-        </div>
-      ))}
-    </div>
+    <section className="section">
+      <div className='columns is-multiline'>
+        {events.map((event, index) => (
+          <div className='column is-4' key={index}>
+            <EventCard event={event} />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
