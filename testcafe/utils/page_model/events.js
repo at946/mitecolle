@@ -10,8 +10,13 @@ class Events {
         eventName: eventCard.find('[data-testid="event_name"]'),
         eventLinkIcon: eventCard.find('[data-testid="event_link_icon"]'),
         slideCount: eventCard.find('[data-testid="slide_count"]'),
+        showSlidesLink: eventCard.find('[data-testid="show_slides_link"]'),
       };
     };
+  }
+
+  async clickShowSlidesLink(nth) {
+    await t.click(this.eventCard(nth).showSlidesLink);
   }
 }
 

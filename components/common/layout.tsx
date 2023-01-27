@@ -10,10 +10,15 @@ interface Props {
 
 const Layout: NextPage<Props> = ({ children }: Props) => {
   return (
-    <div className='is-flex is-flex-direction-column' style={{ minHeight: '100vh' }}>
+    <div
+      className='is-flex is-flex-direction-column has-background-light'
+      style={{ minHeight: '100vh' }}
+    >
       <MyHead />
       <Header />
-      <main className='section has-text-centered'>{children}</main>
+      <main className='section has-text-centered mx-auto' style={{ maxWidth: '1000px' }}>
+        {children}
+      </main>
       <Footer />
     </div>
   );
