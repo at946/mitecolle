@@ -24,7 +24,7 @@ server.use(router);
 router.render = (req, res) => {
   const rawRes = res.locals.data;
 
-  switch (req._parsedUrl.pathname) {
+  switch (req._parsedOriginalUrl.pathname) {
     case '/slides':
       const params = new URLSearchParams(req.originalUrl.split('?').pop());
       const keyword = params.get('keyword');

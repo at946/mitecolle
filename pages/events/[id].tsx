@@ -26,7 +26,7 @@ const EventSlides: NextPage<Props> = ({ event, slides }) => {
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const eventId: string = String(context.query.id);
   const res = await fetch(`${process.env.GET_EVENT_URL}?id=${eventId}`);
-  const { data } = await res.json();
+  const data = await res.json();
   return {
     props: {
       event: data.event,
