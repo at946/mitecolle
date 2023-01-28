@@ -6,21 +6,32 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 
 server.use((req, res, next) => {
-  req.url = `${req._parsedUrl.pathname}?keyword=${req.query.keyword}&page=${req.query.page}`;
+  switch (req._parsedUrl.pathname) {
+    case '/slides':
+      req.url = `/slides?keyword=${req.query.keyword}&page=${req.query.page}`;
+      break;
+    case '/event':
+      req.url = `/event/${req.query.id}`;
+      break;
+    default:
+      break;
+  }
   next();
 });
 
 server.use(router);
 
 router.render = (req, res) => {
+  const rawRes = res.locals.data;
+
   switch (req._parsedUrl.pathname) {
     case '/slides':
       const params = new URLSearchParams(req.originalUrl.split('?').pop());
       const keyword = params.get('keyword');
       const data =
         keyword !== null
-          ? res.locals.data.filter((v) => v.title.includes(keyword) || v.hashtags.includes(keyword))
-          : res.locals.data;
+          ? rawRes.filter((v) => v.title.includes(keyword) || v.hashtags.includes(keyword))
+          : rawRes;
       const maxPage = Math.ceil(data.length / 10);
       const queryPage = Number(params.get('page'));
       const page = queryPage > maxPage || queryPage < 1 ? 1 : queryPage;
@@ -40,7 +51,8 @@ router.render = (req, res) => {
       break;
     case '/event':
       res.send({
-        data: res.locals.data,
+        event: rawRes.event,
+        slides: rawRes.slides,
       });
       break;
     default:
