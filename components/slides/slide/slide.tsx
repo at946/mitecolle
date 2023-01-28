@@ -14,7 +14,7 @@ const Slide: NextPage<Props> = ({ slide }) => {
     <div data-testid='slide'>
       <div className='mb-5'>
         <SlideTitle title={slide.title} url={slide.url} />
-        {slide.hashtags !== '' && <Hashtags hashtags={slide.hashtags} className='mt-3 mb-0' />}
+        {!!slide.hashtags && <Hashtags hashtags={slide.hashtags} className='mt-3 mb-0' />}
       </div>
       <SlideIframe src={slide.iframeSrc} width={slide.width} height={slide.height} />
       <SlideShareButton title={slide.title} url={slide.url} />

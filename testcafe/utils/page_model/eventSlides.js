@@ -5,7 +5,6 @@ class Page {
     this.title = Selector('[data-testid="title"]');
     this.subtitle = Selector('[data-testid="subtitle"]');
     this.eventLink = Selector('[data-testid="event_link"]');
-    this.message = Selector('[data-testid="message"]');
     this.slides = Selector('[data-testid="slide"]');
     this.slide = (slideNth) => {
       const slide = this.slides.nth(slideNth);
@@ -14,10 +13,6 @@ class Page {
         titleLink: slide.find('[data-testid="slide_title_link"]'),
         iframe: slide.find('[data-testid="slide_iframe"]'),
         shareButton: slide.find('[data-testid="slide_share_button"]'),
-        hashtags: slide.find('[data-testid="hashtag"]'),
-        hashtag: (hashtagNth) => {
-          return slide.find('[data-testid="hashtag"]').nth(hashtagNth);
-        },
       };
     };
     this.paginationLinks = Selector('[data-testid="pagination_link"]');

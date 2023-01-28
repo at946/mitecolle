@@ -3,6 +3,7 @@ import { Event } from '../../interfaces/event';
 import { Slide } from '../../interfaces/slide';
 import Motion from '../../components/common/motion';
 import PageTitle from '../../components/common/pageTitle';
+import Slides from '../../components/slides/slides';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,10 +16,13 @@ const EventSlides: NextPage<Props> = ({ event, slides }) => {
   return (
     <Motion>
       <PageTitle title={event.name} help={`#${event.hashtag}`} />
+
       <a href={event.url} target='_blank' rel='noopener noreferrer' data-testid='event_link'>
         <span>イベントページ</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-3' />
       </a>
+
+      <Slides slides={slides} />
     </Motion>
   );
 };
