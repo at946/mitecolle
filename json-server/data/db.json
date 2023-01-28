@@ -124,7 +124,7 @@
     { "id": "hashtag21", "hashtag": "hashtag21", "name": "Sample Event 21", "url": "http://localhost:3000/hashtag21", "startDate": "2023-01-21", "endDate": "2023-01-22", "slideCount": 50 }
   ],
   "event": [
-    { "id": "hashtag1", "hashtag": "hashtag1", "name": "Sample Event 1", "url": "http://localhost:3000/hashtag1", "slides": [
+    { "id": "hashtag1", "event": { "id": "hashtag1", "hashtag": "hashtag1", "name": "Sample Event 1", "url": "http://localhost:3000/hashtag1" }, "slides": [
       { "id": "hashtag1_01", "title": "Hashtag 1 Slide 1" , "url": "http://localhost:3000/hashtag1/slide1" , "iframeSrc": "http://localhost:3000/player/hashtag1/slide1" , "width":  800, "height": 600 },
       { "id": "hashtag1_02", "title": "Hashtag 1 Slide 2" , "url": "http://localhost:3000/hashtag1/slide2" , "iframeSrc": "http://localhost:3000/player/hashtag1/slide2" , "width": 1600, "height": 900 },
       { "id": "hashtag1_03", "title": "Hashtag 1 Slide 3" , "url": "http://localhost:3000/hashtag1/slide3" , "iframeSrc": "http://localhost:3000/player/hashtag1/slide3" , "width":  800, "height": 600 },
@@ -225,7 +225,7 @@
       { "id": "hashtag1_98", "title": "Hashtag 1 Slide 98", "url": "http://localhost:3000/hashtag1/slide98", "iframeSrc": "http://localhost:3000/player/hashtag1/slide98", "width":  800, "height": 600 },
       { "id": "hashtag1_99", "title": "Hashtag 1 Slide 99", "url": "http://localhost:3000/hashtag1/slide99", "iframeSrc": "http://localhost:3000/player/hashtag1/slide99", "width":  800, "height": 600 }  
     ]},
-    { "id": "hashtag2", "hashtag": "hashtag2", "name": "Sample Event 2", "url": "http://localhost:3000/hashtag2", "slides": [
+    { "id": "hashtag2", "event": { "id": "hashtag2", "hashtag": "hashtag2", "name": "Sample Event 2", "url": "http://localhost:3000/hashtag2" }, "slides": [
       { "id": "hashtag2_01", "title": "Hashtag 2 Slide 1" , "url": "http://localhost:3000/hashtag2/slide1" , "iframeSrc": "http://localhost:3000/player/hashtag2/slide1" , "width":  800, "height": 600 }
     ]}
   ]
