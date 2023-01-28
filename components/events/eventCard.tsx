@@ -12,7 +12,7 @@ const EventCard: NextPage<Props> = ({ event }) => {
   return (
     <div className='card' data-testid='event_card'>
       <header className='card-header'>
-        <p className='card-header-title' data-testid='event_name'>
+        <p className='card-header-title has-text-left' data-testid='event_name'>
           {event.name}
         </p>
         <button className='card-header-icon'>
