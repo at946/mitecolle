@@ -1,22 +1,25 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { keyword } from '../../interfaces/keyword';
+import { useRouter } from 'next/router';
 import { useAppSelector } from '../../store/hook';
+import { keyword } from '../../interfaces/keyword';
 
 interface Props {
   page: number;
   maxPage: number;
 }
 
-const Pagination: NextPage<Props> = ({ page, maxPage }: Props) => {
+const Pagination: NextPage<Props> = ({ page, maxPage }) => {
+  const router = useRouter();
+  const path = router.asPath.split('?').shift();
   const keyword: keyword = useAppSelector((state) => state.keyword.keyword);
 
   const createHref = (hrefPage: number): string => {
-    if (!!keyword) {
-      return `/slides?page=${hrefPage}&keyword=${keyword}`;
-    } else {
-      return `/slides?page=${hrefPage}`;
+    let resHref = `${path}?page=${hrefPage}`;
+    if (path === '/slides' && !!keyword) {
+      resHref += `&keyword=${keyword}`;
     }
+    return resHref;
   };
 
   return (

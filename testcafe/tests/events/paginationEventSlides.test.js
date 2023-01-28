@@ -1,14 +1,14 @@
-import page from '../../utils/page_model/slides';
+import page from '../../utils/page_model/eventSlides';
 import urls from '../../utils/functions/urls';
 
 fixture('slides/pagination')
-  .page(urls.slides)
+  .page(urls.eventSlides('hashtag1'))
 
-test('スライドページで、ページネーションできること', async t => {
+test('イベントスライドページで、ページネーションできること', async t => {
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 1')
-    .expect(page.slide(9).title.innerText).eql('One day 10')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 1')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -18,12 +18,12 @@ test('スライドページで、ページネーションできること', async
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
   // query parameterでページネーション
-  await t.navigateTo(`${urls.slides}?page=5`)
+  await t.navigateTo(`${urls.eventSlides('hashtag1')}?page=5`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 41')
-    .expect(page.slide(9).title.innerText).eql('One day 50')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 41')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 50')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -39,8 +39,8 @@ test('スライドページで、ページネーションできること', async
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 51')
-    .expect(page.slide(9).title.innerText).eql('One day 60')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 51')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 60')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -56,8 +56,8 @@ test('スライドページで、ページネーションできること', async
 
   await t
     .expect(page.slides.count).eql(9)
-    .expect(page.slide(0).title.innerText).eql('One day 91')
-    .expect(page.slide(8).title.innerText).eql('One day 99')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 91')
+    .expect(page.slide(8).title.innerText).eql('Hashtag 1 Slide 99')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -71,8 +71,8 @@ test('スライドページで、ページネーションできること', async
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 81')
-    .expect(page.slide(9).title.innerText).eql('One day 90')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 81')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 90')
     .expect(page.paginationLinks.count).eql(3)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).notContains('is-current')
@@ -88,8 +88,8 @@ test('スライドページで、ページネーションできること', async
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 1')
-    .expect(page.slide(9).title.innerText).eql('One day 10')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 1')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -100,13 +100,13 @@ test('スライドページで、ページネーションできること', async
 
 })
 
-test('スライドページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
-  await t.navigateTo(`${urls.slides}?page=11`)
+test('イベントスライドページで、ページ外の値がURLに付与された場合、1ページ目が表示されること', async t => {
+  await t.navigateTo(`${urls.eventSlides('hashtag1')}?page=11`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 1')
-    .expect(page.slide(9).title.innerText).eql('One day 10')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 1')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -115,12 +115,12 @@ test('スライドページで、ページ外の値がURLに付与された場�
     .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
 
-  await t.navigateTo(`${urls.slides}?page=hello`)
+  await t.navigateTo(`${urls.eventSlides('hashtag1')}?page=hello`)
 
   await t
     .expect(page.slides.count).eql(10)
-    .expect(page.slide(0).title.innerText).eql('One day 1')
-    .expect(page.slide(9).title.innerText).eql('One day 10')
+    .expect(page.slide(0).title.innerText).eql('Hashtag 1 Slide 1')
+    .expect(page.slide(9).title.innerText).eql('Hashtag 1 Slide 10')
     .expect(page.paginationLinks.count).eql(2)
     .expect(page.paginationLink(0).innerText).eql('1')
     .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
@@ -128,4 +128,17 @@ test('スライドページで、ページ外の値がURLに付与された場�
     .expect(page.paginationLink(1).getAttribute('class')).notContains('is-current')
     .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
     .expect(page.paginationNext.getAttribute('class')).notContains('is-disabled')
+})
+
+test('イベントスライドページで、スライドが10枚以下のとき、ページネーションできないこと', async t => {
+  await t.navigateTo(urls.eventSlides('hashtag2'))
+
+  await t
+    .expect(page.slides.count).eql(1)
+    .expect(page.slide(0).title.innerText).eql('Hashtag 2 Slide 1')
+    .expect(page.paginationLinks.count).eql(1)
+    .expect(page.paginationLink(0).innerText).eql('1')
+    .expect(page.paginationLink(0).getAttribute('class')).contains('is-current')
+    .expect(page.paginationPrevious.getAttribute('class')).contains('is-disabled')
+    .expect(page.paginationNext.getAttribute('class')).contains('is-disabled')
 })
