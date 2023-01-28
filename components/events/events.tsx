@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import Event from '../../interfaces/event';
+import { Event } from '../../interfaces/event';
 import EventCard from './eventCard';
 
 interface Props {
@@ -8,10 +8,10 @@ interface Props {
 
 const Events: NextPage<Props> = ({ events }) => {
   return (
-    <section className="section">
+    <section className='section'>
       <div className='columns is-multiline'>
-        {events.map((event, index) => (
-          <div className='column is-4' key={index}>
+        {events.map((event) => (
+          <div className='column is-4' key={event.id}>
             <EventCard event={event} />
           </div>
         ))}

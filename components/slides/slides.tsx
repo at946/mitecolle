@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
-import { Slides } from '../../interfaces/slides';
+import { Slide as IFSlide } from '../../interfaces/slide';
 import Slide from './slide/slide';
 
 interface Props {
-  slides: Slides;
+  slides: IFSlide[];
 }
 
 const Slides: NextPage<Props> = ({ slides }) => {

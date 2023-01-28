@@ -11,7 +11,7 @@ const PageTitle: NextPage<Props> = ({ title, help }) => {
       <h1 className='title' data-testid='title'>
         {title}
       </h1>
-      {!!help && <p className='help'>{help}</p>}
+      {!!help && <p data-testid='subtitle'>{help}</p>}
     </section>
   );
 };
