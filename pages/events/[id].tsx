@@ -6,13 +6,16 @@ import PageTitle from '../../components/common/pageTitle';
 import Slides from '../../components/slides/slides';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import Pagination from '../../components/common/pagination';
 
 interface Props {
   event: Event;
   slides: Slide[];
+  page: number;
+  maxPage: number;
 }
 
-const EventSlides: NextPage<Props> = ({ event, slides }) => {
+const EventSlides: NextPage<Props> = ({ event, slides, page, maxPage }) => {
   return (
     <Motion>
       <PageTitle title={event.name} help={`#${event.hashtag}`} />
@@ -23,18 +26,23 @@ const EventSlides: NextPage<Props> = ({ event, slides }) => {
       </a>
 
       <Slides slides={slides} shareHashtags={event.hashtag} />
+
+      <Pagination page={page} maxPage={maxPage} />
     </Motion>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const eventId: string = String(context.query.id);
-  const res = await fetch(`${process.env.GET_EVENT_URL}?id=${eventId}`);
+  const queryPage: number = isNaN(Number(context.query.page)) ? 1 : Number(context.query.page);
+  const res = await fetch(`${process.env.GET_EVENT_URL}?id=${eventId}&page=${queryPage}`);
   const data = await res.json();
   return {
     props: {
       event: data.event,
       slides: data.slides,
+      page: data.page,
+      maxPage: data.maxPage,
     },
   };
 };
