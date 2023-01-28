@@ -5,5 +5,5 @@ export interface Slide {
   iframeSrc: string;
   width: number;
   height: number;
-  hashtags: string;
+  hashtags?: string;
 }
