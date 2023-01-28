@@ -7,7 +7,7 @@ import Slides from '../components/slides/slides';
 import Pagination from '../components/common/pagination';
 import Message from '../components/common/message';
 import { keyword } from '../interfaces/keyword';
-import { Slides as IFSlides } from '../interfaces/slides';
+import { Slide as IFSlide } from '../interfaces/slide';
 import { useAppDispatch } from '../store/hook';
 import { setKeyword } from '../store/keywordSlice';
 import { setIsSearched } from '../store/searchStateSlice';
@@ -16,7 +16,7 @@ interface Props {
   page: number;
   maxPage: number;
   keyword: keyword;
-  slides: IFSlides;
+  slides: IFSlide[];
 }
 
 const SlidesPage: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
@@ -39,7 +39,7 @@ const SlidesPage: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const queryPage = isNaN(Number(context.query.page)) ? 1 : Number(context.query.page);
+  const queryPage: number = isNaN(Number(context.query.page)) ? 1 : Number(context.query.page);
   const keyword: keyword = !!context.query.keyword ? String(context.query.keyword) : '';
   var queryParams = `page=${queryPage}`;
   if (keyword) {

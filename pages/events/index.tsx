@@ -1,8 +1,8 @@
 import type { GetServerSideProps, NextPage } from 'next';
-import Event from '../interfaces/event';
-import Motion from '../components/common/motion';
-import PageTitle from '../components/common/pageTitle';
-import Events from '../components/events/events';
+import { Event } from '../../interfaces/event';
+import Motion from '../../components/common/motion';
+import PageTitle from '../../components/common/pageTitle';
+import Events from '../../components/events/events';
 
 interface Props {
   events: Event[];

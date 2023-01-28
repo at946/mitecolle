@@ -1,8 +1,9 @@
-export default interface Event {
+export interface Event {
+  id: string;
   hashtag: string;
-  eventName: string;
-  eventUrl: string;
-  startDate: Date;
-  endDate: Date;
-  slideCount: number;
+  name: string;
+  url: string;
+  startDate?: Date;
+  endDate?: Date;
+  slideCount?: number;
 }
