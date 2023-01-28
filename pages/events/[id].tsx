@@ -22,7 +22,7 @@ const EventSlides: NextPage<Props> = ({ event, slides }) => {
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-3' />
       </a>
 
-      <Slides slides={slides} />
+      <Slides slides={slides} shareHashtags={event.hashtag} />
     </Motion>
   );
 };

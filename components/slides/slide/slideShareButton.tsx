@@ -6,10 +6,15 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 interface Props {
   title: string;
   url: string;
+  hashtags?: string;
 }
 
-const SlideShareButton: NextPage<Props> = ({ title, url }: Props) => {
-  const shareText = `${title}\n\nvia @mitecolle\n${url}`;
+const SlideShareButton: NextPage<Props> = ({ title, url, hashtags }) => {
+  let shareText = title;
+  if (!!hashtags) {
+    shareText += `\n#${hashtags.split(',').join(' #')}`;
+  }
+  shareText += `\n\nvia @mitecolle\n${url}`;
   const shareHref = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   const clickShareButton = () => {
