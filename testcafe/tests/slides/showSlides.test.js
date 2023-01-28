@@ -26,7 +26,7 @@ test('スライドページで、シェア数の多い順番にスライドが�
 
 test('スライドページで、スライドのシェアボタンを選択したとき、Twitterにスライドをシェアできること', async t => {
   await t
-    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 1\n\nvia @mitecolle\nhttp://localhost:3000/one_day/1')}`)
+    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('One day 1\n#hashtag1 #hashtag2\n\nvia @mitecolle\nhttp://localhost:3000/one_day/1')}`)
     .expect(page.slide(0).shareButton.getAttribute('target')).eql('_blank')
 
   await t

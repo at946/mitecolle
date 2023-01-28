@@ -28,3 +28,14 @@ test('イベントスライドページで、そのイベントのスライド�
     .expect(page.slide(9).titleLink.getAttribute('target')).eql('_blank')
     .expect(page.slide(9).iframe.getAttribute('src')).eql('http://localhost:3000/player/hashtag1/slide10')
 })
+
+test('イベントスライドページで、スライドのシェアを選択したとき、Twitterにスライドをシェアできること', async t => {
+  await t
+    .expect(page.slide(0).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Hashtag 1 Slide 1\n#hashtag1\n\nvia @mitecolle\nhttp://localhost:3000/hashtag1/slide1')}`)
+    .expect(page.slide(0).shareButton.getAttribute('target')).eql('_blank')
+
+
+  await t
+    .expect(page.slide(9).shareButton.getAttribute('href')).eql(`https://twitter.com/intent/tweet?text=${encodeURIComponent('Hashtag 1 Slide 10\n#hashtag1\n\nvia @mitecolle\nhttp://localhost:3000/hashtag1/slide10')}`)
+    .expect(page.slide(9).shareButton.getAttribute('target')).eql('_blank')
+})
