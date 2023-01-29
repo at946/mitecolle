@@ -4,7 +4,7 @@ import Motion from '../components/common/motion';
 const PP: NextPage = () => {
   return (
     <Motion>
-      <section className='section'>
+      <section className='section has-text-left'>
         <h1 className='title is-4'>プライバシーポリシー</h1>
         <p className='content'>
           mitecolle（以下、「本サービス」）では、本サービスをご利用されるユーザーの個人情報の取扱について以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
