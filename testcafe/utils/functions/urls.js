@@ -3,6 +3,7 @@ const urls = {
   slides: `${process.env.SITE_URL}/slides`,
   events: `${process.env.SITE_URL}/events`,
   eventSlides: (id) => `${process.env.SITE_URL}/events/${id}`,
+  about: `${process.env.SITE_URL}/about`,
   tos: `${process.env.SITE_URL}/tos`,
   pp: `${process.env.SITE_URL}/pp`,
 };

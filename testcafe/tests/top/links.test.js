@@ -20,3 +20,11 @@ test('トップページで、「Events」ボタンを選択したとき、イ�
 
   await t.expect(getUrl()).eql(urls.events)
 })
+
+test('トップページで、「About us」ボタンを選択したとき、Aboutページへ遷移すること', async t => {
+  await t.expect(getUrl()).eql(urls.top)
+
+  await top.clickAboutUsLinkButton()
+
+  await t.expect(getUrl()).eql(urls.about)
+})
