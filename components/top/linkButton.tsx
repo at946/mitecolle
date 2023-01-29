@@ -4,13 +4,14 @@ import Link from 'next/link';
 interface Props {
   text: string;
   href: string;
+  addClass?: string;
   testid?: string;
 }
 
-const LinkButton: NextPage<Props> = ({ text, href, testid }) => {
+const LinkButton: NextPage<Props> = ({ text, href, addClass, testid }) => {
   return (
     <Link href={href}>
-      <a className='button is-primary' data-testid={testid}>
+      <a className={`button ${addClass}`} data-testid={testid}>
         {text}
       </a>
     </Link>
