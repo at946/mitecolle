@@ -4,7 +4,7 @@ import Motion from '../components/common/motion';
 const ToS: NextPage = () => {
   return (
     <Motion>
-      <section className='section'>
+      <section className='section has-text-left'>
         <h1 className='title is-4'>利用規約</h1>
         <p className='content'>
           この利用規約は（以下、「本規約」といいます。）は、mitecolle（以下、「本サービス」といいます。）の利用条件を定めるものです。
