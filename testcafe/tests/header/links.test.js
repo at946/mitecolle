@@ -27,3 +27,21 @@ test('ヘッダーでbmcアイコンを選択したとき、Buy me a coffeeサ�
     .expect(header.buymeacoffee.getAttribute('href')).eql('https://www.buymeacoffee.com/at946')
     .expect(header.buymeacoffee.getAttribute('target')).eql('_blank')
 })
+
+test.page(urls.events)
+('ヘッダーで「スライド」を選択したとき、スライドページに遷移すること', async t => {
+  await t.expect(getUrl()).eql(urls.events)
+
+  await header.clickMenu('slides')
+
+  await t.expect(getUrl()).eql(urls.slides)
+})
+
+test.page(urls.slides)
+('ヘッダーで「イベント」を選択したとき、イベントページに遷移すること', async t => {
+  await t.expect(getUrl()).eql(urls.slides)
+  
+  await header.clickMenu('events')
+  
+  await t.expect(getUrl()).eql(urls.events)
+})
