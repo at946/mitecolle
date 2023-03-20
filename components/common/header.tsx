@@ -41,13 +41,13 @@ const Header: NextPage = () => {
           <div className='navbar-end'>
             <Link href='/slides'>
               <a className='navbar-item' data-testid='header_menu_slides'>
-                <FontAwesomeIcon icon={faImages} className="mr-1" />
+                <FontAwesomeIcon icon={faImages} className='mr-1' />
                 <span>Slides</span>
               </a>
             </Link>
             <Link href='/events'>
               <a className='navbar-item' data-testid='header_menu_events'>
-                <FontAwesomeIcon icon={faCalendarCheck} className="mr-1" />
+                <FontAwesomeIcon icon={faCalendarCheck} className='mr-1' />
                 <span>Events</span>
               </a>
             </Link>
@@ -58,7 +58,7 @@ const Header: NextPage = () => {
               rel='noreferrer'
               data-testid='header_menu_support'
             >
-              <FontAwesomeIcon icon={faMugHot} className="mr-1" />
+              <FontAwesomeIcon icon={faMugHot} className='mr-1' />
               <span>Support</span>
             </a>
           </div>
