@@ -2,6 +2,9 @@ import { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMugHot } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarCheck, faImages } from '@fortawesome/free-regular-svg-icons';
 
 const Header: NextPage = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -38,26 +41,25 @@ const Header: NextPage = () => {
           <div className='navbar-end'>
             <Link href='/slides'>
               <a className='navbar-item' data-testid='header_menu_slides'>
-                Slides
+                <FontAwesomeIcon icon={faImages} className="mr-1" />
+                <span>Slides</span>
               </a>
             </Link>
             <Link href='/events'>
               <a className='navbar-item' data-testid='header_menu_events'>
-                Events
+                <FontAwesomeIcon icon={faCalendarCheck} className="mr-1" />
+                <span>Events</span>
               </a>
             </Link>
             <a
-              href='https://www.buymeacoffee.com/at946'
+              href='https://note.com/_at_946/n/nc805619e4e23'
               className='navbar-item'
               target='_blank'
               rel='noreferrer'
-              data-testid='buymeacoffee'
+              data-testid='header_menu_support'
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src='https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png'
-                alt='Buy me a coffee'
-              />
+              <FontAwesomeIcon icon={faMugHot} className="mr-1" />
+              <span>Support</span>
             </a>
           </div>
         </div>
