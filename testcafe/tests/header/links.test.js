@@ -22,10 +22,10 @@ test.page(urls.slides)
   await t.expect(getUrl()).eql(urls.top)
 })
 
-test('ヘッダーでbmcアイコンを選択したとき、Buy me a coffeeサイトへ遷移すること', async t => {
+test('ヘッダーでサポートアイコンを選択したとき、noteの支援ページへ遷移すること', async t => {
   await t
-    .expect(header.buymeacoffee.getAttribute('href')).eql('https://www.buymeacoffee.com/at946')
-    .expect(header.buymeacoffee.getAttribute('target')).eql('_blank')
+    .expect(header.menu('support').getAttribute('href')).eql('https://note.com/_at_946/n/nc805619e4e23')
+    .expect(header.menu('support').getAttribute('target')).eql('_blank')
 })
 
 test.page(urls.events)

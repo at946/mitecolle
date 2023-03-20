@@ -4,7 +4,6 @@ class Header {
   constructor() {
     this.logo = Selector('[data-testid="header_logo"]');
     this.menu = (menuName) => Selector(`[data-testid="header_menu_${menuName}`);
-    this.buymeacoffee = Selector('[data-testid="buymeacoffee"]');
   }
 
   async clickLogo() {
