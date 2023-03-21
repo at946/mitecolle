@@ -11,6 +11,7 @@ import { Slide as IFSlide } from '../interfaces/slide';
 import { useAppDispatch } from '../store/hook';
 import { setKeyword } from '../store/keywordSlice';
 import { setIsSearched } from '../store/searchStateSlice';
+import Head from 'next/head';
 
 interface Props {
   page: number;
@@ -21,6 +22,7 @@ interface Props {
 
 const SlidesPage: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
   const dispatch = useAppDispatch();
+  const title: string = 'Slides - mitecolle';
 
   useEffect(() => {
     dispatch(setKeyword(keyword));
@@ -28,13 +30,19 @@ const SlidesPage: NextPage<Props> = ({ page, maxPage, keyword, slides }) => {
   }, [dispatch, keyword]);
 
   return (
-    <Motion>
-      <PageTitle title='Slides' help='Twitterで今シェアされているスライドを集めました。' />
-      <KeywordSearch />
-      {slides.length < 1 && <Message message='スライドが見つかりませんでした。' />}
-      <Slides slides={slides} />
-      <Pagination page={page} maxPage={maxPage} />
-    </Motion>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta key='og:title' property='og:title' content={title} />
+      </Head>
+      <Motion>
+        <PageTitle title='Slides' help='Twitterで今シェアされているスライドを集めました。' />
+        <KeywordSearch />
+        {slides.length < 1 && <Message message='スライドが見つかりませんでした。' />}
+        <Slides slides={slides} />
+        <Pagination page={page} maxPage={maxPage} />
+      </Motion>
+    </>
   );
 };
 
