@@ -3,17 +3,26 @@ import { Event } from '../../interfaces/event';
 import Motion from '../../components/common/motion';
 import PageTitle from '../../components/common/pageTitle';
 import Events from '../../components/events/events';
+import Head from 'next/head';
 
 interface Props {
   events: Event[];
 }
 
 const History: NextPage<Props> = ({ events }) => {
+  const title: string = 'Events - mitecolle';
+
   return (
-    <Motion>
-      <PageTitle title='Events' help='イベントのスライドをハッシュタグから集めました。' />
-      <Events events={events} />
-    </Motion>
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta key='og:title' property='og:title' content={title} />
+      </Head>
+      <Motion>
+        <PageTitle title='Events' help='イベントのスライドをハッシュタグから集めました。' />
+        <Events events={events} />
+      </Motion>
+    </>
   );
 };
 
